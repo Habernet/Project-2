@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "ddlkP12oa>316!",
-    "database": "tcg",
+    "password": null,
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
