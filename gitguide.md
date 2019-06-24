@@ -40,6 +40,7 @@ Here is a helpful reminder of the git process when creating, adding to, committi
   2.4 Now make your commit message that says specifically what code you changed in this story. `git commit -m "your commit message here"`
   
   2.5 Pull down again. Type `git pull` (while on your feature branch after you've added/committed)...this will pull in any changes that were merged into you develop branch while you were working.
+      If it asks for a branch, point to the develop branch `git pull origin develop`.
 ```  
 
 ```
