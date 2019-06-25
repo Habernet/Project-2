@@ -20,7 +20,9 @@ module.exports = function (app) {
   app.get("/carryout", function(req, res) {
     // Call the DB and get all of the data from our menu table. Use a callback to render these with handlebars.
     // We will then expand the logic here based on the front end. First step is get the menu displayed.
-    //Currently this will hit our 404 catch all because nothing is defined here.
+    db.Item.findAll().then(function(response) {
+      res.render("carryout", { data: response });
+    });
   });
 
   app.get("/reviews", function(req, res) {
