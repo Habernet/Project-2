@@ -38,12 +38,15 @@ Here is a helpful reminder of the git process when creating, adding to, committi
   2.3 Type `git status` again, you will now see the files are green, which indicates they have been added to your branch
 
   2.4 Now make your commit message that says specifically what code you changed in this story. `git commit -m "your commit message here"`
+  
+  2.5 Pull down again. Type `git pull` (while on your feature branch after you've added/committed)...this will pull in any changes that were merged into you develop branch while you were working.
+      If it asks for a branch, point to the develop branch `git pull origin develop`.
 ```  
 
 ```
 3. You're ready to push your branch up to github
 
-  3.1 Next, push your code up to the repository, with a `git push origin <branchname>`
+  3.1 Next, push your code up to the repository, with a `git push origin <branchname>` (branchname refers to the feature branch, not the develop branch)
 
   3.2 Once your branch is pushed up, navigate to our repo, and you can see branch under "Your recently pushed branches:". Click on Compare & pull request
 
