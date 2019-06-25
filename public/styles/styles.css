@@ -2,3 +2,26 @@
   line-height: 2.5;
 }
 
+#cart,#cartwithOrder{
+  width:30%;
+  float:right;
+}
+.payment{
+  width:100%;
+  float:right; 
+}
+#menu{
+width:70%;
+float:left;
+}
+#bagImg{
+  width:200px;
+}
+.btn-info{
+padding:0.5em;
+border-bottom:5px;
+}
+.row{
+  line-height: 3em;
+}
+
