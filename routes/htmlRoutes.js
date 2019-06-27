@@ -1,6 +1,6 @@
 var db = require("../models");
-
-module.exports = function (app) {
+var tableInfo = require("../data/tableData");
+module.exports = function(app) {
   // Load index page
 
   //Patrick changed this because we aren't loading anything from the DB on our main page. We just want a message. In fact might not even need handlebars here..will discuss later.
@@ -12,9 +12,16 @@ module.exports = function (app) {
 
   // Load example page and pass in an example by id
   app.get("/dinein", function(req, res) {
+    console.log(tableInfo);
+    res.render("dinein", { table: tableInfo });
+
     // Call the DB and get the current data as far as reservations...use a callback to render these to the page.
     // We will then bring in more logic here to deal with the reservation/waitlist feature. Refer to old classwork to handle this.
     //Currently this will hit our 404 catch all because nothing is defined here.
+  });
+
+  app.get("/reserve", function(req, res) {
+    res.render("reserve");
   });
 
   app.get("/carryout", function(req, res) {
@@ -25,12 +32,14 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/reviews", function(req, res) {
-    // This has yet to be discussed with the group, idea is to have an expanded menu page where people can write reviews. This would be a 2-3 review per item ordeal. This is just an idea.
-  });
+  // app.get("/reviews", function(req, res) {
+  //   // This has yet to be discussed with the group, idea is to have an expanded menu page where people can write reviews. This would be a 2-3 review per item ordeal. This is just an idea.
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+module.exports=tableInfo;
+
 };
