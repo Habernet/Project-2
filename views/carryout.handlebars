@@ -1,95 +1,179 @@
 <div id="headerDiv" class="text-center">
-<h1>Menu!!</h1>
+  <h1>Menu!!</h1>
 </div>
 
 <div id="menuDiv" class="container">
-    <div id="menu">
-  {{#each data}}
-  <div class="menuItem row" >
-    <div class="col-4 name">
-    {{name}} 
-    </div>
-    <div class="col-4 price">
-    {{price}}
-    </div>
-    <div class="col-4">
-    <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> 
-    </button>
-    </div>
-  </div>
-  {{/each}}
-    </div >
+  <div id="menu">
+
+{{#each data}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    {{!-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+
+    <a href=#  class="card-title name card link"> {{name}}</a>   <p class="card-text price">{{price}}</p>
+    <div class="btnDiv">
+        <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
+        <select id="quantity">
+          <option value="01">1</option>
+          <option value="02">2 </option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+        </select>
+
+
+
+    <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> </button>
+</div>
+</div>
 </div>
 
-  <div class="container" >
-    <div class="row">
-  <p>Your order Summary</p>
+{{/each}}
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p>Your order Summary</p>
   </div>
   <div class="col-3" id="cart">
-    <img  id="bagImg" src="styles/images.png"></img>
-        <p>Your cart is empty!! Add your favorites</p>
-
+    <img id="bagImg" src="styles/images.png"></img>
+    <p>Your cart is empty!! Add your favorites</p>
   </div>
 </div>
 <div class="container" id="cartwithOrder">
-    <div class="row">
-
+  {{!-- <div class="row">
+<div class="col-8 itemCol">
   </div>
-      <div class="payment">
-        <form>
-            <div class="form-group owner">
-                <label for="owner">Owner</label>
-                <input type="text" class="form-control" id="owner">
-            </div>
-            <div class="form-group CVV">
-                <label for="cvv">CVV</label>
-                <input type="text" class="form-control" id="cvv">
-            </div>
-            <div class="form-group" id="card-number-field">
-                <label for="cardNumber">Card Number</label>
-                <input type="text" class="form-control" id="cardNumber">
-            </div>
-            <div class="form-group" id="expiration-date">
-                <label>Expiration Date</label>
-                <select>
-                    <option value="01">January</option>
-                    <option value="02">February </option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                <select>
-                    <option value="16"> 2016</option>
-                    <option value="17"> 2017</option>
-                    <option value="18"> 2018</option>
-                    <option value="19"> 2019</option>
-                    <option value="20"> 2020</option>
-                    <option value="21"> 2021</option>
-                </select>
-            </div>
-            {{!-- <div class="form-group" id="credit_cards">
-                <img src="assets/images/visa.jpg" id="visa">
-                <img src="assets/images/mastercard.jpg" id="mastercard">
-                <img src="assets/images/amex.jpg" id="amex">
-            </div> --}}
-            <div class="form-group" >
-                <button type="submit" class="btn btn-primary" id="confirmPurchase">Confirm</button>
-            </div>
-        </form>
-    </div>
-
+  <div class="col-2 quantityCol" >
+  </div>
+  <div class="col-2 priceCol">
+  </div>
 </div>
+  </div> --}}
+      <table>
+        <thead>
+            <tr>
+                <th class="col-8">Item</th>
+                <th class="col-2">Quantity</th>
+                <th class="col-2">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+
+  <div class="payment">
+    <form>
+      <div class="form-group owner">
+        <h5>Enter your Credit card details here</h5>
+        <label for="owner">Owner</label>
+        <input type="text" class="form-control" id="owner">
+      </div>
+      <div class="form-group CVV">
+        <label for="cvv">CVV</label>
+        <input type="text" class="form-control" id="cvv">
+      </div>
+      <div class="form-group" id="card-number-field">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" class="form-control" id="cardNumber">
+      </div>
+      <div class="form-group" id="expiration-date">
+        <label>Expiration Date</label>
+        <select>
+          <option value="01">January</option>
+          <option value="02">February </option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select>
+          <option value="16"> 2016</option>
+          <option value="17"> 2017</option>
+          <option value="18"> 2018</option>
+          <option value="19"> 2019</option>
+          <option value="20"> 2020</option>
+          <option value="21"> 2021</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" id="confirmPurchase">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>
+            <div class="modal fade" id="itemModal" role="dialog" style="opacity:1">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{this.name}}</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body " style="text-align:center;font-size: 2em;">{{this.description}}
+                    </div>
+                            <label>Quantity</label>
+
+        <select>
+          <option value="01">1</option>
+          <option value="02">2 </option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+
+                    <div class="modal-footer">
+                        <button type="button" id="okBtn" class="btn btn-primary" data-dismiss="modal"> OK</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
+          {{!-- <p class="card-text">{{description}}</p> --}}
 
+        <div class="modal fade" id="myModal" role="dialog" style="opacity:1">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Order Summary!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body " style="text-align:center;font-size: 2em;">
+                    </div>
+                    <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="closeBtn" class="btn btn-primary" data-dismiss="modal"> Confirm order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/carryout.js"></script>

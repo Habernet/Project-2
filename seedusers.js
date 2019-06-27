@@ -15,7 +15,7 @@ let items = [
        name: "Personal Pizza",
        description: "12 inch pizza with your choice of toppings.",
        price: 12.99
-    },
+    }
 ];
 
 db.Item.bulkCreate(items).then(function(response) {
