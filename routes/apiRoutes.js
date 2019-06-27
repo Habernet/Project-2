@@ -36,4 +36,14 @@ module.exports = function(app) {
     tableInfo.push(req.body);
     res.json(true);
   });
+  app.post("/api/orderdetails", function(req, res) {
+    db.Orderdetails.create({
+      name: req.body.name,
+      phone: req.body.phone
+    })
+      .then(function(orderdetail) {
+        res.json(orderdetail);
+      });
+  });
+  
 };

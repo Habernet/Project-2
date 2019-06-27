@@ -13,16 +13,16 @@
     <a href=#  class="card-title name card link"> {{name}}</a>   <p class="card-text price">{{price}}</p>
     <div class="btnDiv">
         <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
-        <select id="quantity">
-          <option value="01">1</option>
-          <option value="02">2 </option>
-          <option value="03">3</option>
-          <option value="04">4</option>
-          <option value="05">5</option>
-          <option value="06">6</option>
-          <option value="07">7</option>
-          <option value="08">8</option>
-          <option value="09">9</option>
+        <select class="quantity">
+          <option value="1">1</option>
+          <option value="2">2 </option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
           <option value="10">10</option>
         </select>
 
@@ -47,35 +47,24 @@
   </div>
 </div>
 <div class="container" id="cartwithOrder">
-  {{!-- <div class="row">
-<div class="col-8 itemCol">
-  </div>
-  <div class="col-2 quantityCol" >
-  </div>
-  <div class="col-2 priceCol">
-  </div>
-</div>
-  </div> --}}
       <table>
-        <thead>
-            <tr>
-                <th class="col-8">Item</th>
-                <th class="col-2">Quantity</th>
-                <th class="col-2">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-          
+              <tbody>
+
         </tbody>
     </table>
 
   <div class="payment">
     <form>
       <div class="form-group owner">
-        <h5>Enter your Credit card details here</h5>
+        <h5>Enter your details here to place order!</h5>
         <label for="owner">Owner</label>
         <input type="text" class="form-control" id="owner">
       </div>
+            <div class="form-group phone">
+        <label for="phone">Phone number</label>
+        <input type="text" class="form-control" id="phoneNum">
+      </div>
+
       <div class="form-group CVV">
         <label for="cvv">CVV</label>
         <input type="text" class="form-control" id="cvv">
@@ -115,39 +104,6 @@
     </form>
   </div>
 </div>
-            <div class="modal fade" id="itemModal" role="dialog" style="opacity:1">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">{{this.name}}</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                    </div>
-                    <div class="modal-body " style="text-align:center;font-size: 2em;">{{this.description}}
-                    </div>
-                            <label>Quantity</label>
-
-        <select>
-          <option value="01">1</option>
-          <option value="02">2 </option>
-          <option value="03">3</option>
-          <option value="04">4</option>
-          <option value="05">5</option>
-          <option value="06">6</option>
-          <option value="07">7</option>
-          <option value="08">8</option>
-          <option value="09">9</option>
-          <option value="10">10</option>
-
-                    <div class="modal-footer">
-                        <button type="button" id="okBtn" class="btn btn-primary" data-dismiss="modal"> OK</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
           {{!-- <p class="card-text">{{description}}</p> --}}
