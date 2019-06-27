@@ -8,6 +8,7 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
+    "seed-reviews": "node seedreviews.js"
     "seed-items": "node seeditems.js"
   },
   "license": "ISC",
