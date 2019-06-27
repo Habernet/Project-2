@@ -16,6 +16,13 @@ module.exports = function (sequelize, DataTypes) {
     price: {
       type: DataTypes.FLOAT,
       allowNull: false
+    },
+    url: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1, 1000]
+      }
     }
   });
   return Item;
