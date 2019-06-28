@@ -1,5 +1,5 @@
 var db = require("../models");
-var tableInfo = require("../data/tableData");
+var tableInfo = require("../data/tabledata");
 module.exports = function(app) {
   // Load index page
 
