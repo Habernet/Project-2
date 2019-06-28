@@ -50,45 +50,43 @@ $(function() {
 
       $(orderBtn).bind("click", function() {
         orderBtn.remove();
-        var items=$("table").text();
+        var items = $("table").text();
         $(".modal-body").append(items);
         $("#myModal").show();
         // $("#closeBtn").on("click", function() {
         //   $(".modal-body").text(
         //     "Order placed successfully!! You will receive a notification shortly when your order is ready for pickup!!"
         //   );
-          $("#closeBtn").on("click", function() {
-            $("#myModal").hide();
-            $(".payment").show();
-
-          });
-
+        $("#closeBtn").on("click", function() {
+          $("#myModal").hide();
+          $(".payment").show();
         });
-      };
-    });
-
-    $(".name").on("click", function() {
-      $("#itemModal").show();
-    });
-    $("#confirmPurchase").on("click", function(event) {
-      event.preventDefault();
-
-      var newOrder = {
-        name: $("#owner")
-          .val()
-          .trim(),
-        phone: $("#phoneNum")
-          .val()
-          .trim()
-      };
-      console.log(newOrder);
-      $.ajax("/api/orderdetails", {
-        type: "POST",
-        data: newOrder
-      }).then(function() {
-        console.log("created new order with details of customer");
-        location.reload();
       });
-    });
+    }
   });
 
+  $(".name").on("click", function() {
+    $("#itemModal").show();
+  });
+  $("#confirmPurchase").on("click", function(event) {
+    event.preventDefault();
+
+    var newOrder = {
+      name: $("#owner")
+        .val()
+        .trim(),
+      phone: $("#phoneNum")
+        .val()
+        .trim()
+    };
+    // console.log(newOrder);
+    $.ajax("/api/orderdetails", {
+      type: "POST",
+      data: newOrder
+    }).then(function(response) {
+      console.log("created new order with details of customer");
+      console.log(response);
+      location.reload();
+    });
+  });
+});
