@@ -1,5 +1,5 @@
 var db = require("../models");
-var tableInfo = require("../data/tableData");
+var tableInfo = require("../data/tabledata");
 
 console.log("hello world");
 
