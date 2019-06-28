@@ -1,5 +1,5 @@
 var db = require("../models");
-var tableInfo = require("../data/tableData");
+var tableInfo = require("../data/tabledata");
 module.exports = function(app) {
   // Load index page
 
@@ -40,6 +40,5 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-module.exports=tableInfo;
-
+  module.exports = tableInfo;
 };
