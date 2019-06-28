@@ -24,4 +24,23 @@ border-bottom:5px;
 .row{
   line-height: 3em;
 }
+.card{
+  display:inline-block;
+  border:5 px;
+  border:1 px solid;
+  margin:20px;
+  padding:0;
 
+}
+/* .addtoCartBtn{
+  float:right;
+} */
+.card-title{
+  text-align:center;
+}
+.quantity{
+  float:none;
+}
+.btnDiv{
+  text-align:center;
+}

@@ -13,6 +13,7 @@
         "no-empty":"error",
         "no-extra-semi":"error",
         "no-func-assign": "error",
+        "declaration": { "allowArrowFunctions": true },
         "no-irregular-whitespace":"error",
         "no-unreachable": "error",
         "curly": "error",

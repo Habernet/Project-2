@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Item = sequelize.define("Item", {
+  var Review = sequelize.define("Review", {
     id: {
       autoIncrement: true,
       primaryKey: true,
@@ -9,21 +9,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
+    review: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    url: {
+    itemreviewed: {
       type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [1, 1000]
-      }
+      allowNull: false
     }
   });
-  return Item;
+  return Review;
 };
