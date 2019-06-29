@@ -5,10 +5,11 @@ module.exports = function(app) {
 
   //Patrick changed this because we aren't loading anything from the DB on our main page. We just want a message. In fact might not even need handlebars here..will discuss later.
   app.get("/", function(req, res) {
-    res.render("index", {
-      msg: "Very Basic Title Page so we can have a visual!"
+    res.render("index");
+    // , 
+    // {
+    //   // msg: "Very Basic Title Page so we can have a visual!"
     });
-  });
 
   // Load example page and pass in an example by id
   app.get("/dinein", function(req, res) {

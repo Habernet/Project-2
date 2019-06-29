@@ -3,19 +3,21 @@
 }
 
 #cart,#cartwithOrder{
-  width:30%;
+  width:40%;
   float:right;
 }
 .payment{
+  margin-top:10px;
   width:100%;
   float:right; 
 }
 #menu{
-width:70%;
+width:60%;
 float:left;
 }
 #bagImg{
   width:200px;
+  opacity:80%;
 }
 .btn-info{
 padding:0.5em;
@@ -43,4 +45,47 @@ border-bottom:5px;
 }
 .btnDiv{
   text-align:center;
+}
+#header{
+  text-align:center;
+  font-size:2em;
+}
+#closeBtn,#editBtn,#endokBtn{
+  border-radius: 50%;
+  box-shadow: 0 0 5px gray;
+
+}
+.modal-header{
+  border-bottom:0;
+}
+.modal-footer{
+ border-top:0;
+
+}
+.blink_me {
+  animation: blinker 1s linear;
+  background-color: red;
+  color:white;
+  animation-duration: 4s;
+
+}
+
+/* @keyframes blinker {
+  50% {
+    opacity: 0;
+    from {background-color: red;}
+    to {background-color: yellow;}
+  
+  }
+} */
+tr{
+  border:40px;
+}
+.edit{
+  border-radius:50%;
+  padding:3px;
+  margin:5px;
+}
+.form-group{
+  width:100%;
 }

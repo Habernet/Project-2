@@ -5,40 +5,41 @@
 <div id="menuDiv" class="container">
   <div id="menu">
 
-{{#each data}}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    {{!-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+    {{#each data}}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <img class="card-img-top" src={{url}} alt="Card image cap" ; style="width:100%;height:200px">
 
-    <a href=#  class="card-title name card link"> {{name}}</a>   <p class="card-text price">{{price}}</p>
-    <div class="btnDiv">
-        <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
-        <select class="quantity">
-          <option value="1">1</option>
-          <option value="2">2 </option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
+        <a href=# class="card-title name card link"> {{name}}</a>
+        <p class="card-text price">{{price}}</p>
+        <div class="btnDiv">
+          <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
+          <select class="quantity">
+            <option value="1">1</option>
+            <option value="2">2 </option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
 
 
 
-    <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> </button>
-</div>
-</div>
-</div>
+          <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> </button>
+        </div>
+      </div>
+    </div>
 
-{{/each}}
-</div>
+    {{/each}}
+  </div>
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row" id="header">
     <p>Your order Summary</p>
   </div>
   <div class="col-3" id="cart">
@@ -47,20 +48,37 @@
   </div>
 </div>
 <div class="container" id="cartwithOrder">
-      <table>
-              <tbody>
+  <table>
 
-        </tbody>
-    </table>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  {{!-- <div class="container py-5">
+    <form class="row needs-validation" novalidate="" method="POST" action="/echo">
+      <div class="col-md-4 mb-3">
+        <label for="cc-number">Credit card number</label>
+        <input type="text" class="form-control" name="cc-number" id="cc-number" required="" pattern="[0-9]{16}"
+          data-value-missing="A credit card number is required"
+          data-pattern-mismatch="The credit card number must be 16 digits">
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="col-md-12 mb-3">
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+      </div>
+    </form>
+  </div> --}}
 
   <div class="payment">
-    <form>
+    <form class="row needs-validation" novalidate="" method="POST" action="/echo">
       <div class="form-group owner">
-        <h5>Enter your details here to place order!</h5>
+        <h5 class="blink_me">Enter your details here to place order!</h5>
         <label for="owner">Owner</label>
         <input type="text" class="form-control" id="owner">
       </div>
-            <div class="form-group phone">
+      <div class="form-group phone">
         <label for="phone">Phone number</label>
         <input type="text" class="form-control" id="phoneNum">
       </div>
@@ -71,7 +89,12 @@
       </div>
       <div class="form-group" id="card-number-field">
         <label for="cardNumber">Card Number</label>
-        <input type="text" class="form-control" id="cardNumber">
+        <input type="text" class="form-control" name="cc-number" id="cardNumber" required="" pattern="[0-9]{16}"
+          data-value-missing="A credit card number is required"
+          data-pattern-mismatch="The credit card number must be 16 digits">
+        <div class="invalid-feedback"></div>
+
+        {{!-- <input type="text" class="form-control" id="cardNumber"> --}}
       </div>
       <div class="form-group" id="expiration-date">
         <label>Expiration Date</label>
@@ -90,46 +113,77 @@
           <option value="12">December</option>
         </select>
         <select>
-          <option value="16"> 2016</option>
-          <option value="17"> 2017</option>
-          <option value="18"> 2018</option>
-          <option value="19"> 2019</option>
           <option value="20"> 2020</option>
           <option value="21"> 2021</option>
+          <option value="22"> 2022</option>
+          <option value="23"> 2023</option>
+          <option value="24"> 2024</option>
+          <option value="25"> 2025</option>
+
         </select>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" id="confirmPurchase">Confirm</button>
+        <button class="btn btn-danger" id="confirmPurchase">Confirm <span class="fa fa-check-circle"></button>
       </div>
     </form>
   </div>
 </div>
 
 
-          {{!-- <p class="card-text">{{description}}</p> --}}
+{{!-- <p class="card-text">{{description}}</p> --}}
 
-        <div class="modal fade" id="myModal" role="dialog" style="opacity:1">
-            <div class="modal-dialog">
+<div class="modal fade" id="myModal" role="dialog" style="opacity:1">
+  <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Order Summary!</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Order Summary!</h4>
 
-                    </div>
-                    <div class="modal-body " style="text-align:center;font-size: 2em;">
-                    </div>
-                    <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
-                    </div>
+      </div>
+      <div class="modal-body " style="text-align:center;font-size: 2em;">
+      </div>
+      <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+      </div>
 
-                    <div class="modal-footer">
-                        <button type="button" id="closeBtn" class="btn btn-primary" data-dismiss="modal"> Confirm order</button>
-                    </div>
-                </div>
+      <div class="modal-footer">
+        <button type="button" id="editBtn" class="btn btn-primary" data-dismiss="modal"><span class="fa fa-edit"></span>
+        </button>
 
-            </div>
-        </div>
+        <button type="button" id="closeBtn" class="btn btn-success" data-dismiss="modal"> <span
+            class="fa fa-check"></span></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="confirmModal" role="dialog" style="opacity:1">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"></h4>
+
+      </div>
+      <div class="modal-body " style="text-align:center;font-size: 2em;">
+      </div>
+      <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+      </div>
+
+      <div class="modal-footer">
+        <a href="/" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></a>
+
+        {{!-- <button type="button" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></button> --}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/carryout.js"></script>
