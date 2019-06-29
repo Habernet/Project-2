@@ -12,8 +12,14 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/dinein", function(req, res) {
-    res.render("dinein", { table: tableInfo });
-    // Call the DB and get the current data as far as reservations...use a callback to render these to the page.
+    db.Table.findAll().then(response1 => {
+      db.Waitlist.findAll().then(response2 => {
+        res.render("dinein", {
+          response1: response1,
+          response2: response2
+        });
+      });
+    });
   });
 
   app.get("/reserve", function(req, res) {
