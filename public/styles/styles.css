@@ -70,14 +70,14 @@ border-bottom:5px;
 
 }
 
-@keyframes blinker {
+/* @keyframes blinker {
   50% {
     opacity: 0;
     from {background-color: red;}
     to {background-color: yellow;}
   
   }
-}
+} */
 tr{
   border:40px;
 }
@@ -85,4 +85,7 @@ tr{
   border-radius:50%;
   padding:3px;
   margin:5px;
+}
+.form-group{
+  width:100%;
 }

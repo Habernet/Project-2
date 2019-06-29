@@ -1,7 +1,7 @@
 $(function() {
   $(".payment").hide();
 
-  var orderBtn = null;
+  var reviewBtn = null;
   $(".addtoCartBtn").on("click", function() {
     $("#cart").replaceWith($("#cartwithOrder"));
     var itemOrdered = $(this)
@@ -44,14 +44,14 @@ $(function() {
 
     $("tbody").append(orderItem);
     // $(" table tbody").append(priceforOrderedItem);
-    if (orderBtn == null) {
-      orderBtn = $(
-        "<button class='btn btn-warning id='orderBtn'>Place Order  <span class='fa fa-thumbs-up'></span></button>"
+    if (reviewBtn == null) {
+      reviewBtn = $(
+        "<button class='btn btn-warning id='reviewBtn'>Review Order  <span class='fa fa-thumbs-up'></span></button>"
       );
-      orderBtn.appendTo($("#cartwithOrder"));
+      reviewBtn.appendTo($("#cartwithOrder"));
 
-      $(orderBtn).bind("click", function() {
-        orderBtn.remove();
+      $(reviewBtn).bind("click", function() {
+        reviewBtn.remove();
         var items = $("tbody").text();
         $(".modal-body").append(items);
         $("#myModal").show();
@@ -59,6 +59,7 @@ $(function() {
         //   $(".modal-body").text(
         //     "Order placed successfully!! You will receive a notification shortly when your order is ready for pickup!!"
         //   );
+      
         $("#closeBtn").on("click", function() {
           $("#myModal").hide();
           $(".payment").show();
@@ -108,39 +109,47 @@ $(function() {
               .closest("tr")
               .find(".actualPrice")
               .text();
-            if (quantitytoUpdate > 1)
-            {
+            if (quantitytoUpdate > 1) {
               var quantity = parseInt(quantitytoUpdate) - 1;
-            var totalPrice = parseInt(quantity) * parseFloat(price);
-            var newQuantity = $(this)
-              .closest("tr")
-              .find(".quantity");
-            var newtotalPrice = $(this)
-              .closest("tr")
-              .find(".totalPrice");
+              var totalPrice = parseInt(quantity) * parseFloat(price);
+              var newQuantity = $(this)
+                .closest("tr")
+                .find(".quantity");
+              var newtotalPrice = $(this)
+                .closest("tr")
+                .find(".totalPrice");
 
-            console.log(newQuantity);
-            newQuantity.text(quantity);
-            newtotalPrice.text(totalPrice);
-            console.log(quantitytoUpdate);
-            console.log(price);
-            }
-            else{
-              $(this).closest("tr").remove();
+              console.log(newQuantity);
+              newQuantity.text(quantity);
+              newtotalPrice.text(totalPrice);
+              console.log(quantitytoUpdate);
+              console.log(price);
+            } else {
+              $(this)
+                .closest("tr")
+                .remove();
             }
           });
-          $(".delete").bind("click",function(){
-            $(this).closest("tr").remove();
+          $(".delete").bind("click", function() {
+            $(this)
+              .closest("tr")
+              .remove();
           });
-
+          reviewBtn.appendTo($("#cartwithOrder"));
+          $(reviewBtn).bind("click", function() {
+            reviewBtn.remove();
+            var items = $("tbody").text();
+            $(".modal-body").text(items);
+            $("#myModal").show();
+    
+          
         });
+      
       });
-    }
+    });
+  }
   });
 
-  $(".name").on("click", function() {
-    $("#itemModal").show();
-  });
   $("#confirmPurchase").on("click", function(event) {
     event.preventDefault();
 
