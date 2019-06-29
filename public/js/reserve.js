@@ -7,7 +7,7 @@ $(".submit").on("click", function(event) {
   var newReservation = {
     name: $("#reserve-name").val().trim(),
     phonenumber: $("#reserve-phone").val().trim(),
-    numberinparty: 1
+    numberinparty: $("#numofPpl").val().trim()
   };
 
   console.log(newReservation);
