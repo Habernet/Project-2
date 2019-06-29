@@ -6,7 +6,7 @@ $(".submit").on("click", function(event) {
   // Here we grab the form elements
   var newReservation = {
     name: $("#reserve-name").val().trim(),
-    phone: $("#reserve-phone") .val().trim()
+    phone: $("#reserve-phone").val().trim()
   };
 
   console.log(newReservation);
