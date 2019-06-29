@@ -1,27 +1,70 @@
-<div id="home">
-  <div class="container">
-    <div class="jumbotron">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>Welcome to P.A.T.'s Bar & Grill!</h2>
-        {{!-- <form class="clearfix mb-4" action="POST"> --}}
-          <div class="form-group" id="left">
-            <a href="/dinein"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Dine-In</button></a>
-            <a href="/carryout"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span>Carry Out</button></a>
-          </div>
-        {{!-- </form> --}}
-        </ul>
-      </div>
+<body>
+    <div id="headerDiv" class="text-center">
+        <h1> Welcome to our Home Page!!! </h1>
     </div>
-  </div>
+    <br>
+    <br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <img src="https://cdn2.justwineapp.com/assets/article/2019/06/burger-and-beer-places-calgary-yyc-justbeer.jpg"
+                    alt="logo" ;="" style="width:100%;height:200px"> <a
+                    href="https://cdn2.justwineapp.com/assets/article/2019/06/burger-and-beer-places-calgary-yyc-justbeer.jpg"></a>
+            </div>
+
+
+
+            <div class="col-sm-6">
+                <div class="card-body">
+                    <h4></h4>
+                    <div class="button">
+                        <p class="btnText">Dine-In?</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">Cheers!</p>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <p class="btnText">Carry Out</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">Go!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<div class="container">
+<div id="leeflet" style="width:30%"></div>
+
+
 </div>
 
-   <footer class="footer">
-      <div class="container">
-        <p><a href="/api/Dine-In">Dine-In Link</a> | <a href="/api/CarryOut">Carry Out Link</a>
-      </div>
-    </footer>
+</body>
+<footer class="footer">
+    <div class="container">
+        <div class="wrap-collabsible">
+            <input id="collapsible" class="toggle" type="checkbox">
+            <label for="collapsible" class="lbl-toggle">Check out our Links and Hours</label> 
+            <div class="collapsible-content">
+                <div class="content-inner">
+                    <p>
+                        <p><a href="/api/Dine-In">Dine-In Link</a> | <a href="/api/CarryOut">Carry Out Link</a>
+                            <p> Open Monday-Friday 12:00 PM to 2:00 AM</p>
+                        </p>
+                </div>
+            </div>
+        </div>
+
+</footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script src="/js/index.js"></script>
+
