@@ -24,4 +24,45 @@ module.exports = function(app) {
         });
       });
   });
+
+  app.get("/api/tables", (req, res) => {
+    db.Table.findAll().then(response => {
+      res.json(response);
+    });
+  });
+  // return to the front end all objects in this table
+
+
+  app.get("/api/waitlist", (req, res) => {
+    db.Waitlist.findAll().then(response => {
+      res.json(response);
+    });
+  });
+  // return to the front end all objects in this table
+
+
+  app.post("/api/tables", (req, res) => {
+    console.log(req.body);
+    db.Table.findAll().then(response => {
+      if (response.length < 5) {
+        db.Table.create({
+          name: req.body.name,
+          phonenumber: req.body.phonenumber,
+          numberinparty: req.body.numberinparty
+        }).then(response => {res.json(true)});
+      } else {
+        db.Waitlist.create({
+          name: req.body.name,
+          phonenumber: req.body.phonenumber,
+          numberinparty: req.body.numberinparty
+        }).then(response => {res.json(false)});
+      };
+    });
+  });
+  // A request to be seated comes in as a post request from the front end. (a button will be configured to do this)
+  // This route will be hit, it will call everything in the tables table. It will test the length of the response.
+  // If there are less than five, it will create a record with the incoming request and send a response to the user "true"
+  // If there are five in the response, it will create a record in the waitlist table and return "false"
+
+  // The front end will decide what to do with "true" and "false" being received. 
 };

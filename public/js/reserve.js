@@ -6,11 +6,12 @@ $(".submit").on("click", function(event) {
   // Here we grab the form elements
   var newReservation = {
     name: $("#reserve-name").val().trim(),
-    phone: $("#reserve-phone").val().trim()
+    phonenumber: $("#reserve-phone").val().trim(),
+    numberinparty: 1
   };
 
   console.log(newReservation);
-  $.post("/api/dinein", newReservation, function(data) {
+  $.post("/api/tables", newReservation, function(data) {
     // If a table is available... tell user they are booked.
     if (data) {
       alert("Yay! You are officially booked!");
