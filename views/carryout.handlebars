@@ -10,10 +10,34 @@
       <div class="card-body">
         <img class="card-img-top" src={{url}} alt="Card image cap" ; style="width:100%;height:200px">
 
-        <a href=# class="card-title name card link"> {{name}}</a>
+{{!-- <div class="container">
+  <h2>Simple Collapsible</h2>
+  <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div> --}}
+
+  <button class="name btn btn-light" data-toggle="collapse" 
+  data-target="#description">{{name}}</button>
+    {{!-- {{name}}</a> --}}
+  <div id="description" class="collapse in" > 
+       <div class="card card-body"> 
+
+  <p id="description" class="collapse in">{{description}}</p>
+  </div>
+</div>
+
+        {{!-- <button class="card-title name card link btn btn-light collapsible"> {{name}}</button>
+                  <div class="content">
+  <p>{{description}}</p>
+</div> --}}
+
         <p class="card-text price">{{price}}</p>
         <div class="btnDiv">
-          <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
+          <button class="btn reviewBtn "><span class="fa fa-comments"></span> </button>
           <select class="quantity">
             <option value="1">1</option>
             <option value="2">2 </option>
@@ -26,9 +50,6 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-
-
-
           <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> </button>
         </div>
       </div>
@@ -39,7 +60,7 @@
 </div>
 
 <div class="container">
-  <div class="row" >
+  <div class="row">
     <p id="header">Your order Summary</p>
   </div>
   <div class="col-3" id="cart">
