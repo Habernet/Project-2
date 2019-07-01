@@ -9,7 +9,8 @@
     "fix": "eslint --fix .",
     "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
     "seed-reviews": "node seedreviews.js",
-    "seed-items": "node seeditems.js"
+    "seed-items": "node seeditems.js",
+    "seed-tables": "node seedtableswaitlists.js"
   },
   "license": "ISC",
   "dependencies": {
