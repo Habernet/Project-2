@@ -1,7 +1,10 @@
-<div id="headerDiv" class="text-center">
-  <h1>Menu!!</h1>
-</div>
+<div class="container">
 
+    <div class="text-center">Devour!</div>
+    <div class="imgHeader">
+      <img src="https://st.focusedcollection.com/9163412/i/650/focused_171466644-stock-photo-deluxe-vegetarian-burger.jpg" width="500" height="288">
+    </div>
+</div>
 <div id="menuDiv" class="container">
   <div id="menu">
 
@@ -10,34 +13,24 @@
       <div class="card-body">
         <img class="card-img-top" src={{url}} alt="Card image cap" ; style="width:100%;height:200px">
 
-{{!-- <div class="container">
-  <h2>Simple Collapsible</h2>
-  <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
-  <div id="demo" class="collapse">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
-</div> --}}
-
-  <button class="name btn btn-light" data-toggle="collapse" 
-  data-target="#description">{{name}}</button>
-    {{!-- {{name}}</a> --}}
-  <div id="description" class="collapse in" > 
-       <div class="card card-body"> 
-
-  <p id="description" class="collapse in">{{description}}</p>
-  </div>
-</div>
-
-        {{!-- <button class="card-title name card link btn btn-light collapsible"> {{name}}</button>
-                  <div class="content">
-  <p>{{description}}</p>
-</div> --}}
-
-        <p class="card-text price">{{price}}</p>
+<details class="menuItem">
+    <summary class="name">{{name}}</summary>
+{{this.description}}
+</details>
+      <p class="card-text price">{{price}}</p>
         <div class="btnDiv">
-          <button class="btn reviewBtn "><span class="fa fa-comments"></span> </button>
+<button class="btn reviewBtn "><span class="fa fa-comments"></span></button>
+           <div class="reviews"> 
+
+             {{#each data1}}
+            {{!-- {{#each data}}
+            {{#if (eq this.data.name data1.itemreviewed)}} --}}
+            {{name}}
+            {{review}}
+            {{!-- {{/if}}
+            {{/each}} --}}
+            {{/each}}
+            </div>
           <select class="quantity">
             <option value="1">1</option>
             <option value="2">2 </option>
@@ -168,11 +161,13 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" id="editBtn" class="btn btn-primary" data-dismiss="modal"><span class="fa fa-edit"></span>
-        </button>
+                    <a href="#" data-toggle="tooltip" class="tip-top" title="Default tooltip">Tooltip</a>
 
-        <button type="button" id="closeBtn" class="btn btn-success" data-dismiss="modal"> <span
-            class="fa fa-check"></span></button>
+        <a href="#"  id="editBtn" class="btn btn-primary" data-dismiss="modal"  data-toggle="tooltip" class="tip-top" title="Edit order"><span class="fa fa-edit"></span>
+        </a>
+
+        <a href="#"  id="closeBtn" class="btn btn-success" data-dismiss="modal" data-toggle="tooltip" title="Place Order!"> <span
+            class="fa fa-check"></span></a>
       </div>
     </div>
 
@@ -194,7 +189,7 @@
       </div>
 
       <div class="modal-footer">
-        <a href="/" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></a>
+        <button  id="endokBtn" class="btn btn-success"  title="OK!" data-dismiss="modal"> <span class="fa fa-check"></span></button>
 
         {{!-- <button type="button" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></button> --}}
       </div>
@@ -202,7 +197,30 @@
 
   </div>
 </div>
+<footer>
+    <div class="outer">
+    <div class="flex">
+      {{#each data1}}
+      <div class="box">
+              <div style="color:red;font-weight:bold" > 
 
+                {{itemreviewed}}                           <span class="fa fa-heart"></span>
+</div>
+
+        <div>
+                  {{name}}
+
+        </div>
+        "{{review}}"
+      </div>
+{{/each}}
+    </div>
+  </div>
+    <div class="aside">
+<a type="button" class="btn btn-warning" href="/reviews">Write a review<span class="fa fa-star"></span></a>
+ </div>
+
+</footer>
 
 
 

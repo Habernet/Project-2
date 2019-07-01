@@ -3,7 +3,8 @@
         <!-- Reservation Page -->
         <div class="card">
           <div class="card-header">
-            Table Reservation
+                <h3 class="text-center"><span class="fa fa-utensil"></span> Table reservation</h3>
+
           </div>
           <div class="card-body">
             <form role="form">
@@ -12,10 +13,13 @@
                 <input type="text" class="form-control" id="reserve-name">
               </div>
               <div class="form-group">
+                <span class="fa fa-phone" ></span>
                 <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
+                <input type="text" class="form-control " id="reserve-phone">
               </div>
                             <div class="form-group">
+                                              <span class="fa fa-users" ></span>
+
                 <label for="number-of-people">Number of people</label>
               
                         <select id="numofPpl">
@@ -34,6 +38,28 @@
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
-        </div>
+          <div class="modal fade" id="myModal" role="dialog" style="opacity:1">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body " style="text-align:center;font-size: 2em;">
+      </div>
+      <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" id="closeBtn" class="btn btn-success" data-dismiss="modal"> <span
+            class="fa fa-check"></span></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/reserve.js"></script>
