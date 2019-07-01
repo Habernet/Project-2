@@ -38,10 +38,31 @@
           <div class="card-body">
             <form role="form">
               <ul>
-              {{#each table}}
+              {{#each response1}}
                <li>
               <p>Name: {{name}}</p>
-            <p>Phone: {{phone}}</p>
+            <p>Phone: {{phonenumeber}}</p>
+            <p>Phone: {{numberinparty}}</p>
+           </li>
+            {{/each}}
+        </ul
+            </form>
+          </div>
+        </div>
+
+
+         <div class="card">
+          <div class="card-header">
+            <p>Waitlisted</p>
+          </div>
+          <div class="card-body">
+            <form role="form">
+              <ul>
+              {{#each response2}}
+               <li>
+              <p>Name: {{name}}</p>
+            <p>Phone: {{phonenumeber}}</p>
+            <p>Phone: {{numberinparty}}</p>
            </li>
             {{/each}}
         </ul
