@@ -2,7 +2,7 @@
 
     <div class="text-center">Devour!</div>
     <div class="imgHeader">
-      <img src="https://st.focusedcollection.com/9163412/i/650/focused_171466644-stock-photo-deluxe-vegetarian-burger.jpg" width="500" height="288">
+      {{!-- <img src="https://st.focusedcollection.com/9163412/i/650/focused_171466644-stock-photo-deluxe-vegetarian-burger.jpg" width="500" height="288"> --}}
     </div>
 </div>
 <div id="menuDiv" class="container">
@@ -19,18 +19,18 @@
 </details>
       <p class="card-text price">{{price}}</p>
         <div class="btnDiv">
-<button class="btn reviewBtn "><span class="fa fa-comments"></span></button>
+{{!-- <button class="btn reviewBtn "><span class="fa fa-comments"></span></button>
            <div class="reviews"> 
 
              {{#each data1}}
             {{!-- {{#each data}}
             {{#if (eq this.data.name data1.itemreviewed)}} --}}
-            {{name}}
-            {{review}}
+            {{!-- {{name}}
+            {{review}} --}}
             {{!-- {{/if}}
             {{/each}} --}}
-            {{/each}}
-            </div>
+            {{!-- {{/each}}
+            </div> --}} 
           <select class="quantity">
             <option value="1">1</option>
             <option value="2">2 </option>
@@ -217,7 +217,7 @@
     </div>
   </div>
     <div class="aside">
-<a type="button" class="btn btn-warning" href="/reviews">Write a review<span class="fa fa-star"></span></a>
+<a href="/reviews"><button class="btn btn-warning" >Write a review   <span class="fa fa-comments"></span></button></a>
  </div>
 
 </footer>

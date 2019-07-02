@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+
+                    <h3 class="text-center">Write your review!!</h3>
+                </div>
+                <div class="card-body">
+
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="item-to-be-reviewed">Item to be reviewed</label>
+
+                            <select id="itemtobeReviewed">
+                                {{#each response}}
+                                <option value="{{name}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+                                                    </div>
+
+                        <div class="form-group">
+
+                            <input type="text" class="form-control " id="customer-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+
+                            <textarea  placeholder="Your review.." rows="4" cols="50" id="review">
+                            </textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" role="dialog" style="opacity:1">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                    </div>
+                    <div class="modal-body " style="text-align:center;font-size: 2em;">
+                    </div>
+                    <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" id="closeBtn" class="btn btn-success" data-dismiss="modal"> <span
+                                class="fa fa-check"></span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/reviews.js"></script>
