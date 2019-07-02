@@ -1,37 +1,50 @@
 
-         <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
-      <hr>
-      <h2 class="text-center">Current Reservations and Waiting List</h2>
-      <br>
-
-      <div class="text-center">
-        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
-        <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
-      </div>
+    <div class="text-center">
+      <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make
+          Reservation</button></a>
+      <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-lg-12">
+  <div class="row ">
+
+    <div class="col-lg-6 tablereservedContainer">
+     <h4 id="tablecontainerheader"><span class="fa fa-user-circle
+"> </span> Current reservation</h4>
+
+<div class="row">
+          {{#if response1}}
+{{#each response1}}
+<div class="imgContainer">
+  <img src="https://img.icons8.com/ios/452/restaurant-table.png" style="background-color:green"  class="image tableImg">
+  <div class="overlay">
+    <div class="text">Reserved!
+             {{this.name}} for a party of {{this.numberinparty}}</div>
+  </div>
+</div>
+          {{!-- <details  class="reservationDetails">
+            <summary> Reserved!</summary>
+             {{this.name}} for a party of {{this.numberinparty}}
+          </details> --}}
+          {{/each}}
+                    {{/if}}
+                    </div>
+                    </div>
 
 
-        {{!-- <!-- Waiting List Card -->
-        <div class="card mt-4">
-          <div class="card-header">
-            <h4>Waiting List</h4>
-          </div>
-          <div class="card-body">
-            <ul id="waitList" class="list-group"></ul>
-          </div>
-        </div>
-      </div>
-    </div>
 
- --}}
+                <div class="col-lg-6 waitlistContainer">
+<p><h4><span class="fa fa-hourglass-half"></span>    
+Wait list</h4></p>
+
+            {{#each response2}}
+                <ul>
+                    {{name}}
+                </ul>
+                {{/each}}
+
  <!-- Reservation Page -->
-        <div class="card">
+        {{!-- <div class="card">
           <div class="card-header">
             <p>Current reservation</p>
           </div>
@@ -70,7 +83,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 {{!-- 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -96,121 +109,6 @@
       </div>
     </div>
   </div>
-</div> --}}
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/dinein.js"></script>
-
-
-
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>P.A.T.'s Bar & Grill</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/">
- 
-</head>
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Reservation List</h1>
-            <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-            <a href="/"><button class="btn btn-primary"><span class="fa fa-eye"></span>reservation</button></a>
-        </div>
-    </div>
-    <div class="container" id="formbox">
-    <form>
-            <div class="form-group" id="form">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
-            
-         
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email">
-            
-            <div class="form-group">
-                <label for="unique-id">Phone Number</label>
-                <input type="text" class="form-control" id="unique-id">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    <!-- have as display "none in css" -->
-    <table class="table table-sm" id="tables">
-            <thead>
-              <tr>
-                <th scope="col"> <h1>#</h1></th>
-                <th scope="col"><h1>name</h1></th>
-                <th scope="col"><h1>email</h1></th>
-                <th scope="Col"><h1>phone</h1></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td><h1>Tim</h1></td>
-                <td><h1>tim@aol.com</h1></td>
-                <td><h1>9109888001</h1></td>
-           
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td><h1>Pat</h1></td>
-                <td><h1>pat@msn.com</h1></td>
-                <td><h1>9190923345</h1></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td><h1>abby</h1></td>
-                <td><h1>abby@gmail.com</h1></td>
-                <td><h1>9194367789</h1></td>
-                <tr>
-                <tr>
-                <th scope="row">4</th>
-                <td><h1>bob</h1></td>
-                <td><h1>bob@hotmail.com</h1></td>
-                <td><h1>7134567980</h1></td>
-                <tr></tr>
-                <th scope="row">5</th>
-                <td><h1>tara</h1></td>
-                <td><h1>tara@verizon.net</h1></td>
-                <td><h1>2529013399</h1></td>
-              </tr>
-            </tbody>
-          </table>
-</body>
-<script type="text/javascript">
-//putting in click event for make reservation///
-$(".submit").on("click", function(event){
-    event.preventDefault();
-    var Newreservation = {
-        name:$("#name").val().trim(),
-        email:$("#email").val().trim(),
-        twitter:$("#phone").val().trim(),
-        
-    }
-  //global vars
-var tableList = [];
-var reservations = [];
-if (tableList<5){
-    tableList.push(newReservation);
-    }
-    else{
-    reservations.push(newReservation);
-    }
-});
-$.post("/", newReservation)
-.then(function(data) {
-    console.log("working", data);
-    
-});
+</div> --}} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
-</html> --}}
+                <script src="/js/dinein.js"></script>

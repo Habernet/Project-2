@@ -1,8 +1,13 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/reviews/:review", function(req, res) {
-    db.Review.findAll({where: {itemreviewed: req.params.review}}).then(response => {
+  // app.get("/api/reviews/:review", function(req, res) {
+  //   db.Review.findAll({where: {itemreviewed: req.params.review}}).then(response => {
+  //     res.json(response);
+  //   });
+  // });
+  app.get("/api/reviews", function(req, res) {
+    db.Review.findAll().then(response => {
       res.json(response);
     });
   });
@@ -62,4 +67,15 @@ module.exports = function(app) {
   // If there are five in the response, it will create a record in the waitlist table and return "false"
 
   // The front end will decide what to do with "true" and "false" being received. 
+
+app.post("/api/reviews", (req, res) => {
+  // take your req.body and update the DB with it.
+  // use the res to send back to the ajax call the order number
+  db.Review.create({
+    name: req.body.name,
+    review: req.body.review,
+    itemreviewed:req.body.itemreviewed
+  }).then(response => {res.json(true)}) 
+ });
+
 };
