@@ -81,14 +81,22 @@ module.exports = function (app) {
   app.get("/carryout", function (req, res) {
     // Call the DB and get all of the data from our menu table. Use a callback to render these with handlebars.
     // We will then expand the logic here based on the front end. First step is get the menu displayed.
-    db.Item.findAll().then(function (response) {
-      res.render("carryout", { data: response });
+    db.Item.findAll().then(response=> {
+      db.Review.findAll().then(response1=>{
+        console.log(response1);
+      res.render("carryout", { data: response,
+        data1:response1
+      });
     });
   });
+});
 
-  // app.get("/reviews", function(req, res) {
-  //   // This has yet to be discussed with the group, idea is to have an expanded menu page where people can write reviews. This would be a 2-3 review per item ordeal. This is just an idea.
-  // });
+
+  app.get("/reviews", function(req, res) {
+    db.Item.findAll().then(response=>{
+    res.render("reviews",{response:response});
+  });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

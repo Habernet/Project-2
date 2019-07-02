@@ -5,6 +5,7 @@
 #cart,#cartwithOrder{
   width:40%;
   float:right;
+  text-align:center;
 }
 .payment{
   margin-top:10px;
@@ -14,6 +15,7 @@
 #menu{
 width:60%;
 float:left;
+overflow:auto;
 }
 #bagImg{
   width:200px;
@@ -25,6 +27,7 @@ border-bottom:5px;
 }
 .row{
   line-height: 3em;
+  text-align: center;
 }
 .card{
   display:inline-block;
@@ -47,7 +50,7 @@ border-bottom:5px;
   text-align:center;
 }
 #header{
-  text-align:center;
+align-content:center;
   font-size:2em;
 }
 #closeBtn,#editBtn,#endokBtn{
@@ -89,6 +92,30 @@ tr{
 .form-group{
   width:100%;
 }
+/* .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+/* .content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+} */ */
 
 
 .left-half {
@@ -202,3 +229,127 @@ h4 {
   text-align: center;
 }
 
+#Tim {
+  float: right;
+}
+
+
+
+.tableImg {
+  width: 200px;
+  height: 200px;
+  margin:15px;
+}
+
+.menuItem {
+  border-radius: 4px;
+padding:10px 10px 0;
+  text-align: center;
+  color:blue;
+}
+
+.name {
+  font-weight: bold;
+  /* margin: -.5em -.5em 0; */
+  /* padding: .5em; */
+  color:green;
+}
+
+.menuItem[open] {
+  padding:20px;
+}
+
+.menuItem[open] .name {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.menuItem {
+  display:inline;
+  border-radius: 4px;
+padding:10px 10px 0;
+  text-align: center;
+  color:black;
+}
+
+.tablereservedContainer{
+  /* justify-content: space-around;
+  align-content: space-evenly; */
+  margin-top:100px;
+  display: flex;
+  flex-wrap:wrap;
+  align-content: center;
+}
+#tablecontainerheader{
+justify-content: center;}
+.waitlistContainer{
+  margin-top:100px;
+
+}
+
+.imgContainer {
+  position: relative;
+  /* width: 30%; */
+}
+
+.image {
+
+  display:block;
+  height: auto;
+  margin:10px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 10px;
+  right: 0;
+  background-color:#008CBA;
+  overflow: hidden;
+  width: 92%;
+  height:0;
+  transition: .5s ease;
+}
+
+.imgContainer:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* Reviews-Flex box */
+ .outer {
+  display: inline-block;
+  padding: 50px;
+  overflow-x: scroll;
+  max-width: 90%;
+  width: 90%;
+  /* float: left; */
+}
+
+.flex {
+  display: flex;
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid green;
+  margin:10px;
+  /* height:50%; */
+}
+.aside {
+text-align:center;
+
+}
+#mapid {width:50%;
+  height: 300px;}
