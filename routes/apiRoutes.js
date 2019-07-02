@@ -6,6 +6,45 @@ module.exports = function(app) {
   //     res.json(response);
   //   });
   // });
+
+  function createDestroyRespond(tables, req, res, callback) {
+    db.Table.bulkCreate(tables).then(created => {
+      console.log("THREE");
+      // get the names to destroy and store them in an array
+      let toBeDestroyed = [];
+      for (let i = 0; i < tables.length; i++) {
+        toBeDestroyed.push(tables[i].name)
+      };
+      db.Waitlist.destroy({
+        where: { name: toBeDestroyed }
+      })
+        .then(response => {
+          console.log("FOUR ===== DESTROYED: ", response);
+          callback(req, res);
+        });
+    });
+  };
+
+    let sendResponse = (req, res) => {
+      db.Table.findAll().then(response => {
+        if (response.length < 5) {
+          db.Table.create({
+            name: req.body.name,
+            phonenumber: req.body.phonenumber,
+            numberinparty: req.body.numberinparty
+          }).then(response => {res.json(true)});
+        } else {
+          db.Waitlist.create({
+            name: req.body.name,
+            phonenumber: req.body.phonenumber,
+            numberinparty: req.body.numberinparty
+          }).then(response => {res.json(false)});
+        };
+      });
+    };
+
+
+
   app.get("/api/reviews", function(req, res) {
     db.Review.findAll().then(response => {
       res.json(response);
@@ -44,29 +83,41 @@ module.exports = function(app) {
 
 
   app.post("/api/tables", (req, res) => {
-    console.log(req.body);
-    db.Table.findAll().then(response => {
-      if (response.length < 5) {
-        db.Table.create({
-          name: req.body.name,
-          phonenumber: req.body.phonenumber,
-          numberinparty: req.body.numberinparty
-        }).then(response => {res.json(true)});
-      } else {
-        db.Waitlist.create({
-          name: req.body.name,
-          phonenumber: req.body.phonenumber,
-          numberinparty: req.body.numberinparty
-        }).then(response => {res.json(false)});
-      };
+    db.sequelize.query("DELETE FROM tables WHERE createdAt < (NOW() - INTERVAL 45 SECOND)").then(([results, metadata]) => {
+      console.log("Wooo!!");
     });
-  });
-  // A request to be seated comes in as a post request from the front end. (a button will be configured to do this)
-  // This route will be hit, it will call everything in the tables table. It will test the length of the response.
-  // If there are less than five, it will create a record with the incoming request and send a response to the user "true"
-  // If there are five in the response, it will create a record in the waitlist table and return "false"
+    db.Table.findAll()
+      .then(response1 => {
+        console.log("ONE");
+        let emptyTables = 5 - response1.length;
+        // also render outside of the if statement
+        if (emptyTables > 0) {
+          db.Waitlist.findAll(
+            { limit: emptyTables }
+          ).then(response2 => {
+            let tables = [];
+            for (let i = 0; i < response2.length; i++) {
+              tables.push({
+                name: response2[i].dataValues.name,
+                phonenumber: response2[i].dataValues.phonenumber,
+                numberinparty: response2[i].dataValues.numberinparty
+              });
+            };
+            console.log("TWO");
+            createDestroyRespond(tables, req, res, sendResponse);
+          });
+        };
+        sendResponse(req, res);
+      });
 
-  // The front end will decide what to do with "true" and "false" being received. 
+
+
+
+      // I NEED THIS TO HAPPEN AFTER THE ABOVE
+
+  
+  });
+
 
 app.post("/api/reviews", (req, res) => {
   // take your req.body and update the DB with it.
