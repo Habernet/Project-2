@@ -1,0 +1,18 @@
+// initialize the map
+var mymap = L.map("mapid").setView([35.85504815, -78.8406595376177], 13);
+
+// load a tile layer
+L.tileLayer(
+  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiYWJoaW5heWFhMTc4NyIsImEiOiJjanV4aGlqNzUwbjduM3ltd2J1YTVjNXhuIn0.Bz3gZ4NIgZagdLg_ZoFuEQ",
+  {
+    attribution:
+      // eslint-disable-next-line prettier/prettier
+      "Map data &copy; <a href=\'https://www.openstreetmap.org/\'>OpenStreetMap</a> contributors, <a href=\'https://creativecommons.org/licenses/by-sa/2.0/\'>CC-BY-SA</a>, Imagery © <a href=\'https://www.mapbox.com/\'>Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.streets",
+    accessToken:
+      "sk.eyJ1IjoiYWJoaW5heWFhMTc4NyIsImEiOiJjanV4aGlqNzUwbjduM3ltd2J1YTVjNXhuIn0.Bz3gZ4NIgZagdLg_ZoFuEQ"
+  }
+).addTo(mymap);
+// eslint-disable-next-line no-unused-vars
+var marker = L.marker([35.85504815, -78.8406595376177]).addTo(mymap);
