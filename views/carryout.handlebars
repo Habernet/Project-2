@@ -1,7 +1,10 @@
-<div id="headerDiv" class="text-center">
-  <h1>Menu!!</h1>
-</div>
+<div class="container">
 
+    <div class="text-center">Devour!</div>
+    <div class="imgHeader">
+      {{!-- <img src="https://st.focusedcollection.com/9163412/i/650/focused_171466644-stock-photo-deluxe-vegetarian-burger.jpg" width="500" height="288"> --}}
+    </div>
+</div>
 <div id="menuDiv" class="container">
   <div id="menu">
 
@@ -10,10 +13,24 @@
       <div class="card-body">
         <img class="card-img-top" src={{url}} alt="Card image cap" ; style="width:100%;height:200px">
 
-        <a href=# class="card-title name card link"> {{name}}</a>
-        <p class="card-text price">{{price}}</p>
+<details class="menuItem">
+    <summary class="name">{{name}}</summary>
+{{this.description}}
+</details>
+      <p class="card-text price">{{price}}</p>
         <div class="btnDiv">
-          <button class="btn reviewBtn"><span class="fa fa-comments"></span> </button>
+{{!-- <button class="btn reviewBtn "><span class="fa fa-comments"></span></button>
+           <div class="reviews"> 
+
+             {{#each data1}}
+            {{!-- {{#each data}}
+            {{#if (eq this.data.name data1.itemreviewed)}} --}}
+            {{!-- {{name}}
+            {{review}} --}}
+            {{!-- {{/if}}
+            {{/each}} --}}
+            {{!-- {{/each}}
+            </div> --}} 
           <select class="quantity">
             <option value="1">1</option>
             <option value="2">2 </option>
@@ -26,9 +43,6 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-
-
-
           <button class="addtoCartBtn btn" id="placeorderBtn"><span class="fa fa-shopping-cart"></span> </button>
         </div>
       </div>
@@ -39,8 +53,8 @@
 </div>
 
 <div class="container">
-  <div class="row" id="header">
-    <p>Your order Summary</p>
+  <div class="row">
+    <p id="header">Your order Summary</p>
   </div>
   <div class="col-3" id="cart">
     <img id="bagImg" src="styles/images.png"></img>
@@ -147,11 +161,13 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" id="editBtn" class="btn btn-primary" data-dismiss="modal"><span class="fa fa-edit"></span>
-        </button>
+                    <a href="#" data-toggle="tooltip" class="tip-top" title="Default tooltip">Tooltip</a>
 
-        <button type="button" id="closeBtn" class="btn btn-success" data-dismiss="modal"> <span
-            class="fa fa-check"></span></button>
+        <a href="#"  id="editBtn" class="btn btn-primary" data-dismiss="modal"  data-toggle="tooltip" class="tip-top" title="Edit order"><span class="fa fa-edit"></span>
+        </a>
+
+        <a href="#"  id="closeBtn" class="btn btn-success" data-dismiss="modal" data-toggle="tooltip" title="Place Order!"> <span
+            class="fa fa-check"></span></a>
       </div>
     </div>
 
@@ -173,7 +189,7 @@
       </div>
 
       <div class="modal-footer">
-        <a href="/" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></a>
+        <button  id="endokBtn" class="btn btn-success"  title="OK!" data-dismiss="modal"> <span class="fa fa-check"></span></button>
 
         {{!-- <button type="button" id="endokBtn" class="btn btn-success" data-dismiss="modal"> <span class="fa fa-check"></span></button> --}}
       </div>
@@ -181,7 +197,30 @@
 
   </div>
 </div>
+<footer>
+    <div class="outer">
+    <div class="flex">
+      {{#each data1}}
+      <div class="box">
+              <div style="color:red;font-weight:bold" > 
 
+                {{itemreviewed}}                           <span class="fa fa-heart"></span>
+</div>
+
+        <div>
+                  {{name}}
+
+        </div>
+        "{{review}}"
+      </div>
+{{/each}}
+    </div>
+  </div>
+    <div class="aside">
+<a href="/reviews"><button class="btn btn-warning" >Write a review   <span class="fa fa-comments"></span></button></a>
+ </div>
+
+</footer>
 
 
 

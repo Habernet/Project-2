@@ -4,39 +4,37 @@ $(".submit").on("click", function(event) {
   event.preventDefault();
 
   // Here we grab the form elements
-  var newReservation = {
-    name: $("#reserve-name")
+  var newReview = {
+    name: $("#customer-name")
       .val()
       .trim(),
-    phonenumber: $("#reserve-phone")
+    review: $("#review")
       .val()
       .trim(),
-    numberinparty: $("#numofPpl")
-      .val()
-      .trim()
+    itemreviewed: $("#itemtobeReviewed").val()
   };
 
-  console.log(newReservation);
-  $.post("/api/tables", newReservation, function(data) {
+  console.log(newReview.itemreviewed);
+  $.post("/api/reviews", newReview, function(data) {
     // If a table is available... tell user they are booked.
     if (data) {
       $("#myModal").show();
-      $(".modal-body").text("Yay! Your table is reserved!!");
+      $(".modal-body").text("Thank you for your valuable comments!!!");
     }
 
     // If a table is available... tell user they on the waiting list.
     else {
       $("#myModal").show();
-      $(".modal-body").text("Sorry you are on the wait list");
+      $(".modal-body").text("Please review and let us know what you think");
     }
     $("#closeBtn").on("click", function() {
       // location.replace(/dinein);
-    location.replace(href = "/dinein");
+      location.replace((href = "/carryout"));
     });
 
     // Clear the form when submitting
-    $("#reserve-name").val("");
-    $("#reserve-phone").val("");
-    $("#numofPpl").val("");
+    $("#customer-name").val("");
+    $("#review").val("");
+    $("#itemtobeReviewed").val("");
   });
 });
