@@ -83,7 +83,7 @@ module.exports = function(app) {
 
 
   app.post("/api/tables", (req, res) => {
-    db.sequelize.query("DELETE FROM tables WHERE createdAt < (NOW() - INTERVAL 45 SECOND)").then(([results, metadata]) => {
+    db.sequelize.query("DELETE FROM Tables WHERE createdAt < (NOW() - INTERVAL 45 SECOND)").then(([results, metadata]) => {
       console.log("Wooo!!");
     });
     db.Table.findAll()
