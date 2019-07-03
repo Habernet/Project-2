@@ -106,8 +106,9 @@ module.exports = function(app) {
             console.log("TWO");
             createDestroyRespond(tables, req, res, sendResponse);
           });
+        } else {
+          sendResponse(req, res);
         };
-        sendResponse(req, res);
       });
 
 
