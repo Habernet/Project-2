@@ -44,7 +44,7 @@ module.exports = function (app) {
   // Load example page and pass in an example by id
   app.get("/dinein", function (req, res) {
     
-    db.sequelize.query("DELETE FROM tables WHERE createdAt < (NOW() - INTERVAL 1 MINUTE)").then(([results, metadata]) => {
+    db.sequelize.query("DELETE FROM Tables WHERE createdAt < (NOW() - INTERVAL 1 MINUTE)").then(([results, metadata]) => {
       console.log("Wooo!!");
     });
     db.Table.findAll()
