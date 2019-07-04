@@ -108,15 +108,15 @@ $(function() {
     console.log("One review on click event");
     // reviewBtn.remove();
     if ($("tbody").text() === "") {
+      $("#reviewBtn").remove();
       alert("Please select items from menu to place order");
       console.log("in" + $("tbody").text());
       location.reload();
     } else {
       var items = $("<tbody>");
       console.log(JSON.stringify(shoppingCart) + "herere");
-var grandTotal=0;
+      var grandTotal = 0;
       for (var i = 0; i < shoppingCart.length; i++) {
-      
         var li = $("<tr>");
         var item = shoppingCart[i];
         li.text(
@@ -128,16 +128,15 @@ var grandTotal=0;
             " " +
             item.totalPrice
         );
-      
+
         items.append(li);
-         grandTotal=grandTotal+item.totalPrice;
+        grandTotal = grandTotal + item.totalPrice;
       }
       $(".modal-body").empty();
       $(".modal-body").append(items);
       $(".modal-body").append("<br");
 
-      $(".modal-body").append("Your total is "+grandTotal);
-
+      $(".modal-body").append("Your total is " + grandTotal);
 
       $("#myModal").show();
       // $("#closeBtn").on("click", function() {
@@ -258,46 +257,57 @@ var grandTotal=0;
     var ccNum = $("#cardNumber")
       .val()
       .trim();
-    if (name.length < 1 || name !== name.match(/^[a-zA-Z\s]+$/)) {
-      $("#owner").after('<span class="error">Name required</span>');
+    if (
+      name.length < 1
+      // || !name.test("/^[a-zA-Z\s]+$/)")
+    ) {
+      $("#owner").after("<span class=\"error\">Name required</span>");
       $("#owner").focus();
     }
 
     if (
       phone.length < 1 ||
-      phone.length > 10 ||
-      phone !== phone.match(/[^0-9]/)
+      phone.length > 10
+      //  ||
+      //  !(phone.test("/[^0-9]/")
     ) {
       $("#phoneNum").after(
-        '<span class="error"> Valid Phone number required</span>'
+        "<span class=\"error\"> Valid Phone number required</span>"
       );
       $("#phoneNum").focus();
     }
     if (
       ccNum.length > 16 ||
-      ccNum.length < 1 ||
-      ccNum !== ccNum.match(/[^0-9]/)
+      ccNum.length < 16 ||
+      ccNum.length === 0
+      // ||
+      // !ccNum.test("/[^0-9]/")
     ) {
       $("#cardNumber").after(
-        '<span class="error">Enter valid Credit card number</span>'
+        "<span class=\"error\">Enter valid Credit card number</span>"
       );
       $("#cardNumber").focus();
     }
 
-
-    if (cvv.length==="" || cvv.length > 4 || cvv !== cvv.match(/[^0-9]/)) {
-      $("#cvv").after('<span class="error">Invalid CVV/CVC number</span>');
+    if (
+      cvv.length === 0 ||
+      cvv.length > 4
+      // || !cvv.test("/[^0-9]/")
+    ) {
+      $("#cvv").after("<span class=\"error\">Invalid CVV/CVC number</span>");
       $("#cvv").focus();
     }
     if (
-      name.length != "" &&
-      phone.length != "" &&
-      (cvv.length > 1 && cvv.length <= 4) &&
-      (ccNum.length == 16) && name === name.match(/^[a-zA-Z\s]+$/) && 
-      phone === phone.match(/[^0-9]/) &&   ccNum === ccNum.match(/[^0-9]/) &&
-      cvv === cvv.match(/[^0-9]/)
-    )
-     {
+      name.length !== "" &&
+      phone.length !== "" &&
+      (cvv.length > 1 && (cvv.length === 3 || cvv.length === 4)) &&
+      ccNum.length === 16
+      // &&
+      // name === name.match("/^[a-zA-Z\s]+$/") &&
+      // phone.test("/[^0-9]/") &&
+      // ccNum === ccNum.match("/[^0-9]/") &&
+      // cvv === cvv.match("/[^0-9]/"
+    ) {
       var newOrder = {
         name: name,
         phone: phone
@@ -326,7 +336,6 @@ var grandTotal=0;
         $("#endokBtn").on("click", function() {
           location.reload();
         });
-    
       });
     }
   });
@@ -357,22 +366,49 @@ var grandTotal=0;
       price: parseFloat(price),
       totalPrice: parseFloat(totalPrice)
     };
-    console.log(itemObject);
-    if (ContainsItem(itemOrdered).bool) {
-      if (shoppingCart[ContainsItem(itemOrdered).index].quantity == 1) {
-        shoppingCart.pop(itemObject);
-      } else {
-        console.log(shoppingCart[ContainsItem(itemOrdered).index].quantity--);
-        console.log(
-          shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
-            itemObject.quantity * itemObject.price
-        );
-        shoppingCart[ContainsItem(itemOrdered).index].quantity =
-          shoppingCart[ContainsItem(itemOrdered).index].quantity;
-        shoppingCart[ContainsItem(itemOrdered).index].totalPrice =
-          shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
-          itemObject.quantity * itemObject.price;
+    console.log(shoppingCart);
+
+    console.log("before if"+JSON.stringify(shoppingCart[ContainsItem(itemOrdered).index]));
+
+      if (ContainsItem(itemOrdered).bool) {
+        if (shoppingCart[ContainsItem(itemOrdered).index].quantity === 1) {
+
+          shoppingCart.splice(
+            shoppingCart[ContainsItem(itemOrdered).index],
+            1,
+            1
+          );
+          console.log(
+            "deleted item" +
+              JSON.stringify(
+                shoppingCart.splice(
+                  shoppingCart[ContainsItem(itemOrdered).index],
+                  1
+                )
+              )
+          );
+          console.log(shoppingCart);
+        } else {
+          console.log(
+            "elsecondition" +
+              shoppingCart[ContainsItem(itemOrdered).index].quantity -
+              parseInt(itemObject.quantity)
+          );
+          console.log(
+            "elsecondition" +
+              shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
+              itemObject.quantity * itemObject.price
+          );
+          shoppingCart[ContainsItem(itemOrdered).index].quantity =
+            shoppingCart[ContainsItem(itemOrdered).index].quantity -
+            parseInt(itemObject.quantity);
+          shoppingCart[ContainsItem(itemOrdered).index].totalPrice =
+            shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
+            parseInt(itemObject.quantity) * parseFloat(itemObject.price);
+        }
       }
-    }
+      if (shoppingCart.length === 0) {
+        location.reload();
+      }
   });
 });

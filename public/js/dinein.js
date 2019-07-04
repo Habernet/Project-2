@@ -20,29 +20,7 @@ function runTableQuery() {
   });
 }
 
-//   function runWaitListQuery() {
-
-//       for (var i = 0; i < waitData.length; i++) {
-//         var waitList = $("#waitList");
-
-//         var listItem = $("<li class='list-group-item mt-4'>");
-
-//         listItem.append(
-//           $("<h2>").text("Table #" + (i + 1)),
-//           $("<hr>"),
-//           $("<h2>").text("Name: " + waitData[i].customerName),
-//           $("<h2>").text("Phone: " + waitData[i].phoneNumber)
-//         );
-
-//         waitList.append(listItem);
-//       }
-
-//   }
-
 runTableQuery();
-//   runWaitListQuery();
-
-//
 $(".submit").on("click", function(event) {
   event.preventDefault();
   var reservation = {

@@ -9,7 +9,9 @@
     
     <div class="container">
         <div class="row">
+          
             <div class="col-sm-6">
+              
 
                 <img src="https://cdn2.justwineapp.com/assets/article/2019/06/burger-and-beer-places-calgary-yyc-justbeer.jpg"
                     alt="logo" ;="" style="width:100%;height:200px"> <a
@@ -17,15 +19,13 @@
             </div>
 
 
-
             <div class="col-sm-6">
+              {{!-- <div class="shadow-none p-3 mb-5 bg-light rounded"> --}}
                 <div class="card-body">
-                    <h4></h4>
                     <div class="button">
                         <a style="text-decoration:none" href="/dinein">Dine-In</p>
                         <button>Dine-In</button>
                     </div>
-
                     <div class="button">
                         <a style="text-decoration:none" href="/carryout">Carry Out</p>
                         <button>Carry Out</button> </a>
@@ -33,24 +33,27 @@
             </div>
         </div>
     </div>
+    </div>
 <br>
 <br>
 <br>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-      <div class="card border-0 shadow">
-        <img src="styles/images.png" class="card-img-top" alt="Abhi">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Customer Service Manager</div>
-          
-        </div>
-      </div>
-        </div>
 
-        <div class="col-sm-4">
+<!-- Header -->
+{{!-- <header class="bg-primary text-center py-5 mb-4">
+  <div class="container">
+    <h1 class="font-weight-light text-white">Meet the Crew</h1>
+  </div>
+</header> --}}
+
+<!-- Page Content -->
+<div class="container" >
+    
+  <div class="row">
+    <!-- Team Member 1 -->
+    <div class="col-sm-4">
       <div class="card border-0 shadow">
+        <div class="shadow-none p-3 mb-5 bg-light rounded">
+
         <img src="styles/images.png" class="card-img-top" alt="Abhi">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
@@ -59,20 +62,73 @@
         </div>
       </div>
     </div>
+    </div>
+    <!-- Team Member 2 -->
     <div class="col-sm-4">
       <div class="card border-0 shadow">
-        <img src="styles/images.png" class="card-img-top" alt="Abhi">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+
+   <img src="styles/images.png" class="card-img-top" alt="Pat">
         <div class="card-body text-center">
           <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Customer Service Manager</div>
-          
+          <div class="card-text text-black-50">Operations Manager</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Team Member 3 -->
+    <div class="col-sm-4">
+      <div class="card border-0 shadow">
+       <div class="shadow p-3 mb-5 bg-white rounded">
+       <img src="styles/images.png" class="card-img-top" alt="Tim">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Team Member</h5>
+          <div class="card-text text-black-50">Owner</div>
         </div>
       </div>
     </div>
       </div>
     </div>
     <div id="mapid" >
+  
+</div>
+<!-- /.container -->
 
+
+
+
+
+
+
+{{!-- <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Tim Garner</h3>
+            <h3>About Me</h3>
+             <img id="TimImg" src="styles/student.jpg"></img>
+            <p>Customer Service Manager of P.A.T'S Bar & Grill. He is commited to 100% customer satisification. </p>
+
+        </div>
+        <div class="col-sm-4">
+            <h3>About Me</h3>
+            <p> </p>
+        </div>
+        <div class="col-sm-4">
+            <h3>About ME</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo pretium nibh, et luctus libero dapibus sed. Nam nec neque ac tellus dictum hendrerit. Praesent lobortis et risus sed sollicitudin. Nulla facilisi. Donec et odio et arcu suscipit imperdiet. Maecenas imperdiet magna et sapien faucibus facilisis. Donec id tortor diam. Nullam porttitor venenatis ex sit amet faucibus. Nullam sagittis nisl lorem.</p>
+        </div>
+</div>
+</div> --}}
+<br>
+<br>
+<br>
+
+<div class="container">
+  {{!-- <div class="shadow-none p-3 mb-5 bg-light rounded"> --}}
+<div id="leeflet" style="width:30%"></div>
+<div id="mapid" >
+
+</div>
 </div>
 
     </div>
@@ -83,6 +139,10 @@
 
 
 </body>
+<br>
+<br>
+<br>
+
 <footer class="footer">
     <div class="container">
         <div class="wrap-collabsible">
@@ -91,8 +151,9 @@
             <div class="collapsible-content">
                 <div class="content-inner">
                     <p>
-                        <p><a href="/dinein">Dine-In Link</a> | <a href="/carryout">Carry Out Link</a>
                             <p> Open Monday-Friday 12:00 PM to 2:00 AM</p>
+                        <p><a href="/dinein">Dine-In Link</a> | <a href="/carryout">Carry Out Link</a>
+                         
                         </p>
                 </div>
             </div>
