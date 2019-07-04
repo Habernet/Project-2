@@ -83,7 +83,7 @@ module.exports = function(app) {
 
 
   app.post("/api/tables", (req, res) => {
-    db.sequelize.query("DELETE FROM tables WHERE createdAt < (NOW() - INTERVAL 45 SECOND)").then(([results, metadata]) => {
+    db.sequelize.query("DELETE FROM Tables WHERE createdAt < (NOW() - INTERVAL 45 SECOND)").then(([results, metadata]) => {
       console.log("Wooo!!");
     });
     db.Table.findAll()
@@ -106,8 +106,9 @@ module.exports = function(app) {
             console.log("TWO");
             createDestroyRespond(tables, req, res, sendResponse);
           });
+        } else {
+          sendResponse(req, res);
         };
-        sendResponse(req, res);
       });
 
 

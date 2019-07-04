@@ -118,9 +118,7 @@ tr{
 } */ */
 
 
-.left-half {
-  float: left;
-}
+
 #holder{
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -229,9 +227,7 @@ h4 {
   text-align: center;
 }
 
-#Tim {
-  float: right;
-}
+
 
 
 
