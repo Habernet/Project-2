@@ -115,7 +115,6 @@ tr{
   outline: none;
   font-size: 15px;
 }
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
   background-color: #ccc;
@@ -130,9 +129,7 @@ tr{
 } */ */
 
 
-.left-half {
-  float: left;
-}
+
 #holder{
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -237,9 +234,7 @@ h4 {
   text-align: center;
 }
 
-#Tim {
-  float: right;
-}
+
 
 
 
@@ -357,6 +352,7 @@ justify-content: center;}
 }
 .aside {
 text-align:center;
+
 }
 #mapid {width:50%;
 height: 300px; }
@@ -380,3 +376,8 @@ color:white;
   width:500px;
   height:500px;
 } */
+
+  a {
+    color: white;
+  }
+  A:hover { COLOR: white; TEXT-DECORATION: none; font-weight: none }
