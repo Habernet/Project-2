@@ -197,8 +197,8 @@ input[type='checkbox'] {
   transition: max-height .25s ease-in-out;
 }
 .collapsible-content .content-inner {
-  background: rgba(250, 224, 66, .2);
-  border-bottom: 1px solid rgba(250, 224, 66, .45);
+  background: #568200(250, 224, 66, .2);
+  border-bottom: 1px solid #568200(250, 224, 66, .45);
 
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
@@ -353,3 +353,7 @@ text-align:center;
     color: white;
   }
   A:hover { COLOR: white; TEXT-DECORATION: none; font-weight: none }
+
+  body {
+    background-image: url("../styles/chairs.jpg");
+  }
