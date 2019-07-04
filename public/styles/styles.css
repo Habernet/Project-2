@@ -144,6 +144,7 @@ tr{
   border-radius: 3px;
   box-shadow: 0px 1px 2px rgba(0,0,0,.2);
  
+ 
 }
 .btnTwo {
   position : relative;
@@ -155,21 +156,7 @@ tr{
   left : -250px;
   transition : .3s;
 }
-.btnText {
-  color : white;
-  transition : .3s;
-}
-.btnText2 {
-  margin-top : 63px;
-  margin-right : -130px;
-  color : #FFF;
-}
-.button:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
-  left: -130px;
-}
-.button:hover .btnText{ /*When hovering over .button change .btnText*/
-  margin-left : 65px;
-}
+
 .button:active { /*Clicked and held*/
   box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
 }
@@ -200,7 +187,7 @@ input[type='checkbox'] {
 }
 
 .lbl-toggle:hover {
-  color: #7C5A0B;
+  color: red;
 }
 
 .collapsible-content {
@@ -209,14 +196,31 @@ input[type='checkbox'] {
 
   transition: max-height .25s ease-in-out;
 }
+.collapsible-content .content-inner {
+  background: #568200(250, 224, 66, .2);
+  border-bottom: 1px solid #568200(250, 224, 66, .45);
+
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 350px;
 }
 
-p {
-  text-align: center;
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
 }
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+
+
 
 h4 {
   text-align: center;
@@ -349,3 +353,7 @@ text-align:center;
     color: white;
   }
   A:hover { COLOR: white; TEXT-DECORATION: none; font-weight: none }
+
+  body {
+    background-image: url("../styles/chairs.jpg");
+  }
