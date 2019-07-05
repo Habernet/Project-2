@@ -1,8 +1,12 @@
+
+
 <div class="container">
 
-    <div class="text-center">Devour!</div>
-    <div class="imgHeader">
-      {{!-- <img src="https://st.focusedcollection.com/9163412/i/650/focused_171466644-stock-photo-deluxe-vegetarian-burger.jpg" width="500" height="288"> --}}
+    {{!-- <div class="text-center">Devour!</div> --}}
+    <div class="homeBtn">
+        <a href="/" class="btn routeBtn" role="button" ><span class="fa fa-home"></span></a>
+        <a href="/dinein" class="btn routeBtn " role="button" >Dine-in?</span></a>
+
     </div>
 </div>
 <div id="menuDiv" class="container">
@@ -54,43 +58,29 @@
 
 <div class="container">
   <div class="row">
-    <p id="header">Your order Summary</p>
+    {{!-- <p id="header">Your order Summary</p> --}}
   </div>
   <div class="col-3" id="cart">
-    <img id="bagImg" src="styles/images.png"></img>
-    <p>Your cart is empty!! Add your favorites</p>
+    <img id="bagImg"  src="styles/images.png"></img>
+    <p class="text-muted">Your cart is empty!! Add your favorites</p>
   </div>
 </div>
 <div class="container" id="cartwithOrder">
   <table>
-
     <tbody>
 
     </tbody>
   </table>
 
-  {{!-- <div class="container py-5">
-    <form class="row needs-validation" novalidate="" method="POST" action="/echo">
-      <div class="col-md-4 mb-3">
-        <label for="cc-number">Credit card number</label>
-        <input type="text" class="form-control" name="cc-number" id="cc-number" required="" pattern="[0-9]{16}"
-          data-value-missing="A credit card number is required"
-          data-pattern-mismatch="The credit card number must be 16 digits">
-        <div class="invalid-feedback"></div>
-      </div>
-      <div class="col-md-12 mb-3">
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-      </div>
-    </form>
-  </div> --}}
 
   <div class="payment">
-    <form class="row needs-validation" novalidate="" method="POST" action="/echo">
+    <form class="row "  method="POST" action="/echo">
       <div class="form-group owner">
         <h5 class="blink_me">Enter your details here to place order!</h5>
         <label for="owner">Owner</label>
         <input type="text" class="form-control" id="owner">
+                        <span class="text-muted">Full name as displayed on the card</span>
+
       </div>
       <div class="form-group phone">
         <label for="phone">Phone number</label>
@@ -100,13 +90,15 @@
       <div class="form-group CVV">
         <label for="cvv">CVV</label>
         <input type="text" class="form-control" id="cvv">
+                        <span class="text-muted">CVV/CVC</span>
+
+
       </div>
       <div class="form-group" id="card-number-field">
         <label for="cardNumber">Card Number</label>
-        <input type="text" class="form-control" name="cc-number" id="cardNumber" required="" pattern="[0-9]{16}"
-          data-value-missing="A credit card number is required"
-          data-pattern-mismatch="The credit card number must be 16 digits">
-        <div class="invalid-feedback"></div>
+        <input type="text" class="form-control" name="cc-number" id="cardNumber" >
+                <span class="text-muted">Enter credit card number here</span>
+
 
         {{!-- <input type="text" class="form-control" id="cardNumber"> --}}
       </div>
@@ -140,8 +132,9 @@
         <button class="btn btn-danger" id="confirmPurchase">Confirm <span class="fa fa-check-circle"></button>
       </div>
     </form>
-  </div>
 </div>
+  </div>
+
 
 
 {{!-- <p class="card-text">{{description}}</p> --}}
@@ -155,18 +148,18 @@
         <h4 class="modal-title">Order Summary!</h4>
 
       </div>
-      <div class="modal-body " style="text-align:center;font-size: 2em;">
+      <div class="modal-body " style="text-align:center;font-size: 1.5em;">
       </div>
       <div class="modal-bodyimg " style="text-align:center;font-size: 2em;">
       </div>
 
       <div class="modal-footer">
-                    <a href="#" data-toggle="tooltip" class="tip-top" title="Default tooltip">Tooltip</a>
 
-        <a href="#"  id="editBtn" class="btn btn-primary" data-dismiss="modal"  data-toggle="tooltip" class="tip-top" title="Edit order"><span class="fa fa-edit"></span>
+        <a href="#"  id="editBtn" class="btn btn-primary" data-dismiss="modal"  data-toggle="tooltip"data-trigger="hover" title="Edit order"><span class="fa fa-edit"></span>
         </a>
 
-        <a href="#"  id="closeBtn" class="btn btn-success" data-dismiss="modal" data-toggle="tooltip" title="Place Order!"> <span
+        <a href="#"  id="closeBtn" class="btn btn-success" data-dismiss="modal" data-toggle="tooltip" data-trigger="hover"
+ title="Place Order!"> <span
             class="fa fa-check"></span></a>
       </div>
     </div>

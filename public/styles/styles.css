@@ -6,6 +6,13 @@
   width:40%;
   float:right;
   text-align:center;
+  margin-top:50px;
+}
+td{
+  border-bottom:1px solid grey;
+}
+table{
+  margin-bottom:15px;
 }
 .payment{
   margin-top:10px;
@@ -19,8 +26,13 @@ overflow:auto;
 }
 #bagImg{
   width:200px;
-  opacity:80%;
+  margin-bottom:20px;
 }
+#menuDiv{
+  margin-top:30px;
+  /* border-top:3px solid red; */
+}
+
 .btn-info{
 padding:0.5em;
 border-bottom:5px;
@@ -66,10 +78,10 @@ align-content:center;
 
 }
 .blink_me {
-  animation: blinker 1s linear;
+  animation: blinker 3s linear;
   background-color: red;
   color:white;
-  animation-duration: 4s;
+  animation-duration: 5s;
 
 }
 
@@ -276,9 +288,11 @@ padding:10px 10px 0;
   align-content: center;
 }
 #tablecontainerheader{
-justify-content: center;}
+justify-content: center;
+}
 .waitlistContainer{
   margin-top:100px;
+  margin-bottom:20px;
 
 }
 
@@ -327,8 +341,8 @@ justify-content: center;}
   display: inline-block;
   padding: 50px;
   overflow-x: scroll;
-  max-width: 90%;
-  width: 90%;
+  max-width: 100%;
+  width: 100%;
   /* float: left; */
 }
 
@@ -347,7 +361,27 @@ text-align:center;
 
 }
 #mapid {width:50%;
-  height: 300px;}
+height: 300px; }
+
+.error{
+  display: block;
+  color:red;
+}
+
+.homeBtn{
+  float:right;
+  margin:0;
+  padding:0;
+}
+.routeBtn{
+  border-radius:80%;
+background-color: red;
+color:white;
+}
+/* #myModal{
+  width:500px;
+  height:500px;
+} */
 
   a {
     color: white;
