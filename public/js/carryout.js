@@ -1,4 +1,11 @@
 $(function() {
+  $(".autoplay").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+
   $(".payment").hide();
 
   $(".reviewBtn").bind("click", function() {
@@ -261,7 +268,7 @@ $(function() {
       name.length < 1
       // || !name.test("/^[a-zA-Z\s]+$/)")
     ) {
-      $("#owner").after("<span class=\"error\">Name required</span>");
+      $("#owner").after('<span class="error">Name required</span>');
       $("#owner").focus();
     }
 
@@ -272,7 +279,7 @@ $(function() {
       //  !(phone.test("/[^0-9]/")
     ) {
       $("#phoneNum").after(
-        "<span class=\"error\"> Valid Phone number required</span>"
+        '<span class="error"> Valid Phone number required</span>'
       );
       $("#phoneNum").focus();
     }
@@ -284,7 +291,7 @@ $(function() {
       // !ccNum.test("/[^0-9]/")
     ) {
       $("#cardNumber").after(
-        "<span class=\"error\">Enter valid Credit card number</span>"
+        '<span class="error">Enter valid Credit card number</span>'
       );
       $("#cardNumber").focus();
     }
@@ -294,7 +301,7 @@ $(function() {
       cvv.length > 4
       // || !cvv.test("/[^0-9]/")
     ) {
-      $("#cvv").after("<span class=\"error\">Invalid CVV/CVC number</span>");
+      $("#cvv").after('<span class="error">Invalid CVV/CVC number</span>');
       $("#cvv").focus();
     }
     if (
@@ -368,47 +375,49 @@ $(function() {
     };
     console.log(shoppingCart);
 
-    console.log("before if"+JSON.stringify(shoppingCart[ContainsItem(itemOrdered).index]));
+    console.log(
+      "before if" +
+        JSON.stringify(shoppingCart[ContainsItem(itemOrdered).index])
+    );
 
-      if (ContainsItem(itemOrdered).bool) {
-        if (shoppingCart[ContainsItem(itemOrdered).index].quantity === 1) {
-
-          shoppingCart.splice(
-            shoppingCart[ContainsItem(itemOrdered).index],
-            1,
-            1
-          );
-          console.log(
-            "deleted item" +
-              JSON.stringify(
-                shoppingCart.splice(
-                  shoppingCart[ContainsItem(itemOrdered).index],
-                  1
-                )
+    if (ContainsItem(itemOrdered).bool) {
+      if (shoppingCart[ContainsItem(itemOrdered).index].quantity === 1) {
+        shoppingCart.splice(
+          shoppingCart[ContainsItem(itemOrdered).index],
+          1,
+          1
+        );
+        console.log(
+          "deleted item" +
+            JSON.stringify(
+              shoppingCart.splice(
+                shoppingCart[ContainsItem(itemOrdered).index],
+                1
               )
-          );
-          console.log(shoppingCart);
-        } else {
-          console.log(
-            "elsecondition" +
-              shoppingCart[ContainsItem(itemOrdered).index].quantity -
-              parseInt(itemObject.quantity)
-          );
-          console.log(
-            "elsecondition" +
-              shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
-              itemObject.quantity * itemObject.price
-          );
-          shoppingCart[ContainsItem(itemOrdered).index].quantity =
+            )
+        );
+        console.log(shoppingCart);
+      } else {
+        console.log(
+          "elsecondition" +
             shoppingCart[ContainsItem(itemOrdered).index].quantity -
-            parseInt(itemObject.quantity);
-          shoppingCart[ContainsItem(itemOrdered).index].totalPrice =
+            parseInt(itemObject.quantity)
+        );
+        console.log(
+          "elsecondition" +
             shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
-            parseInt(itemObject.quantity) * parseFloat(itemObject.price);
-        }
+            itemObject.quantity * itemObject.price
+        );
+        shoppingCart[ContainsItem(itemOrdered).index].quantity =
+          shoppingCart[ContainsItem(itemOrdered).index].quantity -
+          parseInt(itemObject.quantity);
+        shoppingCart[ContainsItem(itemOrdered).index].totalPrice =
+          shoppingCart[ContainsItem(itemOrdered).index].totalPrice -
+          parseInt(itemObject.quantity) * parseFloat(itemObject.price);
       }
-      if (shoppingCart.length === 0) {
-        location.reload();
-      }
+    }
+    if (shoppingCart.length === 0) {
+      location.reload();
+    }
   });
 });
