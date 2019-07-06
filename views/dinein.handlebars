@@ -1,22 +1,21 @@
-
-    <div class="text-center">
+<div class="container dinein">
+     <div class="text-center">
       <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make
           Reservation</button></a>
       <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
     </div>
-  </div>
 
-  <div class="row ">
 
-    <div class="col-lg-6 tablereservedContainer">
-     <h4 id="tablecontainerheader"><span class="fa fa-user-circle
-"> </span> Current reservation</h4>
 
 <div class="row">
+      <div class="col-lg-6 tablereservedContainer">
+     <h4 id="tablecontainerheader"><span class="fa fa-user-circle
+"> </span> Current reservation</h4>
+<h3 class="text-muted">Only 5 tables are available for reservation at this time!Apologies for any inconvenience!</h3>
           {{#if response1}}
 {{#each response1}}
 <div class="imgContainer">
-  <img src="https://img.icons8.com/ios/452/restaurant-table.png" style="background-color:green"  class="image tableImg">
+  <img src="https://img.icons8.com/ios/452/restaurant-table.png" style="background-color:greenyellow"  class="image tableImg">
   <div class="overlay">
     <div class="text">Reserved!
              {{this.name}} for a party of {{this.numberinparty}}</div>
@@ -28,7 +27,6 @@
           </details> --}}
           {{/each}}
                     {{/if}}
-                    </div>
                     </div>
 
 
@@ -42,73 +40,12 @@ Wait list</h4></p>
                     {{name}}
                 </ul>
                 {{/each}}
-
- <!-- Reservation Page -->
-        {{!-- <div class="card">
-          <div class="card-header">
-            <p>Current reservation</p>
-          </div>
-          <div class="card-body">
-            <form role="form">
-              <ul>
-              {{#each response1}}
-               <li>
-              <p>Name: {{name}}</p>
-            <p>Phone: {{phonenumeber}}</p>
-            <p>Phone: {{numberinparty}}</p>
-           </li>
-            {{/each}}
-        </ul
-            </form>
-          </div>
-        </div>
+                </div>
+                </div>
+                </div>
+                     </div>
 
 
-         <div class="card">
-          <div class="card-header">
-            <p>Waitlisted</p>
-          </div>
-          <div class="card-body">
-            <form role="form">
-              <ul>
-              {{#each response2}}
-               <li>
-              <p>Name: {{name}}</p>
-            <p>Phone: {{phonenumeber}}</p>
-            <p>Phone: {{numberinparty}}</p>
-           </li>
-            {{/each}}
-        </ul
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> --}}
-{{!-- 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
- Please write a review!!!!
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">P.A.T.'s Bar & Grill Reviews</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    Please enter comments here. 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> --}} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
-                <script src="/js/dinein.js"></script>
+                {{!-- <script src="/js/dinein.js"></script> --}}

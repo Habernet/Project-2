@@ -1,11 +1,26 @@
+*{
+  font-family: 'Slabo 27px', serif;
+
+}
 .list-group-item {
   line-height: 2.5;
 }
-
+#headerDiv{
+  color:rgb(199, 74, 74);
+  margin-bottom:40px;
+  padding:10px;
+}
 #cart,#cartwithOrder{
   width:40%;
   float:right;
   text-align:center;
+  margin-top:50px;
+}
+td{
+  border-bottom:1px solid grey;
+}
+table{
+  margin-bottom:15px;
 }
 .payment{
   margin-top:10px;
@@ -19,8 +34,13 @@ overflow:auto;
 }
 #bagImg{
   width:200px;
-  opacity:80%;
+  margin-bottom:20px;
 }
+#menuDiv{
+  margin-top:30px;
+  /* border-top:3px solid red; */
+}
+
 .btn-info{
 padding:0.5em;
 border-bottom:5px;
@@ -35,7 +55,7 @@ border-bottom:5px;
   border:1 px solid;
   margin:20px;
   padding:0;
-
+  box-shadow: 10px 10px 5px grey;
 }
 /* .addtoCartBtn{
   float:right;
@@ -58,6 +78,9 @@ align-content:center;
   box-shadow: 0 0 5px gray;
 
 }
+.shadow{
+  box-shadow: 10px 10px 5px grey;
+}
 .modal-header{
   border-bottom:0;
 }
@@ -66,10 +89,10 @@ align-content:center;
 
 }
 .blink_me {
-  animation: blinker 1s linear;
+  animation: blinker 3s linear;
   background-color: red;
   color:white;
-  animation-duration: 4s;
+  animation-duration: 5s;
 
 }
 
@@ -103,7 +126,6 @@ tr{
   outline: none;
   font-size: 15px;
 }
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
   background-color: #ccc;
@@ -133,18 +155,21 @@ tr{
   box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
   border-radius: 2px;
 }
+.buttonDiv{
+  text-align: center;
+}
 .button {
-  background: #568200;
+  background:rgb(245, 77, 77);
   margin : 20px auto;
-  width : 200px;
-  height : 50px;
+  width : 150px;
+  height : 45px;
   overflow: hidden;
   text-align : center;
   transition : .2s;
   cursor : pointer;
-  border-radius: 3px;
-  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
- 
+  border-radius: 10px;
+  font-size:1.5em;
+  box-shadow: 10px 10px 5px grey; 
 }
 .btnTwo {
   position : relative;
@@ -156,21 +181,7 @@ tr{
   left : -250px;
   transition : .3s;
 }
-.btnText {
-  color : white;
-  transition : .3s;
-}
-.btnText2 {
-  margin-top : 63px;
-  margin-right : -130px;
-  color : #FFF;
-}
-.button:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
-  left: -130px;
-}
-.button:hover .btnText{ /*When hovering over .button change .btnText*/
-  margin-left : 65px;
-}
+
 .button:active { /*Clicked and held*/
   box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
 }
@@ -179,8 +190,7 @@ tr{
 input[type='checkbox'] {
   display: none;
 }
-
-.lbl-toggle {
+/* .lbl-toggle {
   display: block;
 
   font-weight: bold;
@@ -199,9 +209,30 @@ input[type='checkbox'] {
   border-radius: 7px;
   transition: all 0.25s ease-out;
 }
+ */
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  /* font-family: monospace; */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 1rem;
+
+  color: white;
+  background:rgb(245, 77, 77);
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
 
 .lbl-toggle:hover {
-  color: #7C5A0B;
+  color: black;
 }
 
 .collapsible-content {
@@ -210,22 +241,39 @@ input[type='checkbox'] {
 
   transition: max-height .25s ease-in-out;
 }
+.collapsible-content .content-inner {
+  background: #568200(250, 224, 66, .2);
+  border-bottom: 1px solid #568200(250, 224, 66, .45);
+
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 350px;
 }
 
-p {
-  text-align: center;
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
 }
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+
+
 
 h4 {
   text-align: center;
 }
 
-
-
-
+.btn{
+  box-shadow: 10px 10px 5px grey;
+}
 
 .tableImg {
   width: 200px;
@@ -273,9 +321,11 @@ padding:10px 10px 0;
   align-content: center;
 }
 #tablecontainerheader{
-justify-content: center;}
+justify-content: center;
+}
 .waitlistContainer{
   margin-top:100px;
+  margin-bottom:20px;
 
 }
 
@@ -324,8 +374,8 @@ justify-content: center;}
   display: inline-block;
   padding: 50px;
   overflow-x: scroll;
-  max-width: 90%;
-  width: 90%;
+  max-width: 100%;
+  width: 100%;
   /* float: left; */
 }
 
@@ -335,13 +385,87 @@ justify-content: center;}
 
 .box {
   padding: 20px;
-  border: 1px solid green;
+  border: 1px solid black;
   margin:10px;
-  /* height:50%; */
+  border-radius: 5px 20px 5px;
+  background: #cddd9c;
+    /* height:50%; */
 }
 .aside {
 text-align:center;
 
 }
-#mapid {width:50%;
-  height: 300px;}
+#mapContainer{
+  /* margin-bottom:20px; */
+  display:inline;
+}
+#mapid {
+  width:100%;
+height: 300px; 
+/* float:left; */
+}
+#addrContainer{
+  margin-top:100px;
+  justify-content: center;
+  line-height: 1em;
+  width: 100%;
+  height: 300px; 
+/* float:right; */
+
+}
+
+.error{
+  display: block;
+  color:red;
+}
+
+.homeBtn{
+  float:right;
+  margin:0;
+  padding:0;
+}
+.routeBtn{
+  border-radius:80%;
+background-color: red;
+color:white;
+}
+/* #myModal{
+  width:500px;
+  height:500px;
+} */
+
+
+.wrapper{
+  margin-top: 35px;
+}
+  a {
+    color: white;
+  }
+  A:hover { COLOR: white; TEXT-DECORATION: none; font-weight: none }
+
+  /* body { */
+    
+    /* background-image: url("../styles/chairs.jpg"); */
+  /* } */
+
+  /* video header */
+  .jumbotron{
+    width:100%;
+margin-bottom:50px;  }
+  .jumbotron video {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width:100%;
+    height:220px;
+    /*  object-fit is not supported on IE  */
+    object-fit: cover;
+    opacity:0.9;
+  }
+  .jumbotron .container {
+    z-index: 2;
+    position: relative;
+  }
+.dinein{
+  margin-top:50px;
+}
