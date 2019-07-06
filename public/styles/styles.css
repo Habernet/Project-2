@@ -167,7 +167,8 @@ tr{
   text-align : center;
   transition : .2s;
   cursor : pointer;
-  border-radius: 3px;
+  border-radius: 10px;
+  font-size:1.5em;
   box-shadow: 10px 10px 5px grey; 
 }
 .btnTwo {
