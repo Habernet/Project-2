@@ -89,21 +89,18 @@ align-content:center;
 
 }
 .blink_me {
-  animation: blinker 3s linear;
+  animation: blinker 5s linear ;
   background-color: red;
   color:white;
   animation-duration: 5s;
 
 }
 
-/* @keyframes blinker {
+@keyframes blinker {
   50% {
     opacity: 0;
-    from {background-color: red;}
-    to {background-color: yellow;}
-  
   }
-} */
+}
 tr{
   border:40px;
 }
