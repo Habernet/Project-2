@@ -16,6 +16,16 @@ let reviews = [
        review: "I could have eaten a 40 inch version of this thing, it was amazing.",
        itemreviewed: "Personal Pizza"
     },
+    {
+       name: "Justin Williams",
+       review: "Best pizza around, hands down!",
+       itemreviewed: "Personal Pizza"
+    },
+    {
+       name: "Dave",
+       review: "This thing put me into a food coma. 10/10 would food coma again.",
+       itemreviewed: "Double Cheeseburger"
+    }
 ];
 
 db.Review.bulkCreate(reviews).then(function(response) {
