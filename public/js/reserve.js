@@ -22,12 +22,14 @@ $(".submit").on("click", function(event) {
   ) {
     $("#reserve-phone").after(
       "<span class='error'>Valid  phone number is required</span>"
+
     );
     $("#reserve-phone").focus();
   }
   if (phonenumber.length < 1) {
     $("#reserve-phone").after(
       "<span class='error'>This field is required</span>"
+
     );
     $("#reserve-phone").focus();
   }
@@ -59,6 +61,7 @@ $(".submit").on("click", function(event) {
         // location.replace(/dinein);
         location.replace((href = "/dinein"));
       });
+
 
       // Clear the form when submitting
       $("#reserve-name").val("");

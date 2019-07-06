@@ -139,6 +139,7 @@ $(function() {
             item.price +" "+
             // eslint-disable-next-line prettier/prettier
             "-" +" "+
+
             item.totalPrice
         );
 
@@ -150,6 +151,7 @@ $(function() {
       $(".modal-body").append("<br>");
 
       $(".modal-body").append("Your total is " + grandTotal).css("font-weight:bolder");
+
 
       $("#myModal").show();
       // $("#closeBtn").on("click", function() {
@@ -197,6 +199,7 @@ $(function() {
     reviewBtn.appendTo($("#cartwithOrder"));
   });
 
+
   $(document).on("click", "#confirmPurchase", function(event) {
     event.preventDefault();
     $(".error").hide();
@@ -218,6 +221,7 @@ $(function() {
       // || !name.test("/^[a-zA-Z\s]+$/)")
     ) {
       $("#owner").after("<span class='error'>Name required</span>");
+
       $("#owner").focus();
     }
 
@@ -242,6 +246,7 @@ $(function() {
       $("#cardNumber").after(
         "<span class='error'>Enter valid Credit card number</span>"
       );
+
       $("#cardNumber").focus();
     }
 
@@ -251,6 +256,7 @@ $(function() {
       // || !cvv.test("/[^0-9]/")
     ) {
       $("#cvv").after("<span class='error'>Invalid CVV/CVC number</span>");
+
       $("#cvv").focus();
     }
     if (
