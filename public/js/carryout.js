@@ -89,11 +89,11 @@ $(function() {
     var orderItem =
       "<tr><td class='itemOrdered'>" +
       itemOrdered +
-      "</td><td class='quantity'>" +
+      "</td><td>     </td><td>     </td><td class='quantity'>" +
       quantity +
-      "</td><td class='actualPrice'>" +
+      "</td><td>      </td><td>     </td><td class='actualPrice'>" +
       priceforOrderedItem +
-      "</td><td class='totalPrice'>" +
+      "</td> <td>     </td><td>     </td><td class='totalPrice'>" +
       totalPrice +
       "</td></tr>";
     $("tbody").append(orderItem);
@@ -127,12 +127,18 @@ $(function() {
         var li = $("<tr>");
         var item = shoppingCart[i];
         li.text(
-          item.item +
-            " " +
-            item.quantity +
-            " " +
-            item.price +
-            " " +
+          // eslint-disable-next-line prettier/prettier
+          item.item +" "+
+            // eslint-disable-next-line prettier/prettier
+            "-" +" "+
+            // eslint-disable-next-line prettier/prettier
+            item.quantity +" "+
+            // eslint-disable-next-line prettier/prettier
+            "-" +" "+
+            // eslint-disable-next-line prettier/prettier
+            item.price +" "+
+            // eslint-disable-next-line prettier/prettier
+            "-" +" "+
             item.totalPrice
         );
 
@@ -140,10 +146,10 @@ $(function() {
         grandTotal = grandTotal + item.totalPrice;
       }
       $(".modal-body").empty();
-      $(".modal-body").append(items);
-      $(".modal-body").append("<br");
+      $(".modal-body").append(items).css("text-align","center");
+      $(".modal-body").append("<br>");
 
-      $(".modal-body").append("Your total is " + grandTotal);
+      $(".modal-body").append("Your total is " + grandTotal).css("font-weight:bolder");
 
       $("#myModal").show();
       // $("#closeBtn").on("click", function() {
@@ -189,64 +195,7 @@ $(function() {
 
     $("#myModal").hide();
     reviewBtn.appendTo($("#cartwithOrder"));
-
-    // $(reviewBtn).bind("click", function() {
-    //   console.log("A second event")
-    //   reviewBtn.remove();
-    //   var items = $("tbody").text();
-    //   $(".modal-body").text(items);
-    //   $("#myModal").show();
-    // });
   });
-
-  // $(document).on("click", ".quantityAdd", function() {
-  //   quantitytoUpdate = $(this)
-  //     .closest("tr")
-  //     .find(".quantity")
-  //     .text();
-  //   price = $(this)
-  //     .closest("tr")
-  //     .find(".actualPrice")
-  //     .text();
-  //   console.log(quantitytoUpdate);
-  //   var quantity = parseInt(quantitytoUpdate) + 1;
-  //   var totalPrice = parseInt(quantity) * parseFloat(price);
-  //   var newQuantity = $(this)
-  //     .closest("tr")
-  //     .find(".quantity");
-  //   var newtotalPrice = $(this)
-  //     .closest("tr")
-  //     .find(".totalPrice");
-
-  //   // console.log(newQuantity);
-  //   newQuantity.text(quantity);
-  //   newtotalPrice.text(totalPrice);
-  //   // console.log(quantitytoUpdate);
-  //   // console.log(price);
-  // });
-
-  // $(document).on("click", ".quantityMinus", function() {
-  //   if (quantitytoUpdate > 1) {
-  //     var quantity = parseInt(quantitytoUpdate) - 1;
-  //     var totalPrice = parseInt(quantity) * parseFloat(price);
-  //     var newQuantity = $(this)
-  //       .closest("tr")
-  //       .find(".quantity");
-  //     var newtotalPrice = $(this)
-  //       .closest("tr")
-  //       .find(".totalPrice");
-
-  //     console.log(quantitytoUpdate);
-  //     newQuantity.text(quantity);
-  //     newtotalPrice.text(totalPrice);
-  //     // console.log(quantitytoUpdate);
-  //     // console.log(price);
-  //   } else {
-  //     $(this)
-  //       .closest("tr")
-  //       .remove();
-  //   }
-  // });
 
   $(document).on("click", "#confirmPurchase", function(event) {
     event.preventDefault();
@@ -268,7 +217,7 @@ $(function() {
       name.length < 1
       // || !name.test("/^[a-zA-Z\s]+$/)")
     ) {
-      $("#owner").after('<span class="error">Name required</span>');
+      $("#owner").after("<span class='error'>Name required</span>");
       $("#owner").focus();
     }
 
@@ -279,7 +228,7 @@ $(function() {
       //  !(phone.test("/[^0-9]/")
     ) {
       $("#phoneNum").after(
-        '<span class="error"> Valid Phone number required</span>'
+        "<span class='error'> Valid Phone number required</span>"
       );
       $("#phoneNum").focus();
     }
@@ -291,7 +240,7 @@ $(function() {
       // !ccNum.test("/[^0-9]/")
     ) {
       $("#cardNumber").after(
-        '<span class="error">Enter valid Credit card number</span>'
+        "<span class='error'>Enter valid Credit card number</span>"
       );
       $("#cardNumber").focus();
     }
@@ -301,7 +250,7 @@ $(function() {
       cvv.length > 4
       // || !cvv.test("/[^0-9]/")
     ) {
-      $("#cvv").after('<span class="error">Invalid CVV/CVC number</span>');
+      $("#cvv").after("<span class='error'>Invalid CVV/CVC number</span>");
       $("#cvv").focus();
     }
     if (
